@@ -5,10 +5,9 @@
     enable = true;
     userName = "hafflationist";
     userEmail = "internetzverbindung(an)gmail(punkt)com";
+    package = pkgs.gitFull;
     extraConfig = {
-      credential.helper = "${
-          pkgs.git.override { withLibsecret = true; }
-        }/bin/git-credential-libsecret";
+      credential.helper = "libsecret";
     };
   };
 }
