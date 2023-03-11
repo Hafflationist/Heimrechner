@@ -44,7 +44,7 @@ myClickJustFocuses = False
 
 -- Width of the window border in pixels.
 --
-myBorderWidth   = 0
+myBorderWidth   = 4
 
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
@@ -67,7 +67,7 @@ myWorkspaces    = map show [1..9]
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#000000"
-myFocusedBorderColor = "#ff0000"
+myFocusedBorderColor = "#c50ed2"
 
 addNETSupported :: Atom -> X ()
 addNETSupported x   = withDisplay $ \dpy -> do
@@ -340,7 +340,7 @@ myStartupHook = do
   --spawnOnce "exec ~/bin/eww daemon"
   --spawn "xsetroot -cursor_name left_ptr"
   --spawn "exec ~/bin/lock.sh"
-  spawnOnce "feh --bg-scale /etc/nixos/users/mrobohm/programme/xmonad/steilo.jpg"
+  spawnOnce "feh --bg-scale /etc/nixos/users/mrobohm/programs/xmonad/steilo.jpg"
   --spawnOnce "picom --experimental-backends"
   --spawnOnce "greenclip daemon"
   --spawnOnce "dunst"
