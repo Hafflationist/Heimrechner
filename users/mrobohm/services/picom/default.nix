@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  services.status-notifier-watcher.enable = true;
   services.picom = {
     enable = true;
     activeOpacity = 0.95;
