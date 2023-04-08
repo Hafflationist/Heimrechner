@@ -1,11 +1,3 @@
---
--- xmonad example config file.
---
--- A template showing all available configuration hooks,
--- and how to override the defaults in your own xmonad.hs conf file.
---
--- Normally, you'd only override those defaults you care about.
---
 import XMonad
 import XMonad.Layout.Fullscreen
     ( fullscreenEventHook, fullscreenManageHook, fullscreenSupport, fullscreenFull )
@@ -29,6 +21,54 @@ import XMonad.Layout.Gaps
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 import Data.Maybe (maybeToList)
+
+-- Import for Polybar --
+import qualified Codec.Binary.UTF8.String              as UTF8
+import qualified DBus                                  as D
+import qualified DBus.Client                           as D
+import           XMonad.Hooks.DynamicLog
+
+------------------------------------------------------------------------
+-- Polybar settings (needs DBus client).
+--
+mkDbusClient :: IO D.Client
+mkDbusClient = do
+  dbus <- D.connectSession
+  D.requestName dbus (D.busName_ "org.xmonad.log") opts
+  return dbus
+ where
+  opts = [D.nameAllowReplacement, D.nameReplaceExisting, D.nameDoNotQueue]
+
+-- Emit a DBus signal on log updates
+dbusOutput :: D.Client -> String -> IO ()
+dbusOutput dbus str =
+  let opath  = D.objectPath_ "/org/xmonad/Log"
+      iname  = D.interfaceName_ "org.xmonad.Log"
+      mname  = D.memberName_ "Update"
+      signal = D.signal opath iname mname
+      body   = [D.toVariant $ UTF8.decodeString str]
+  in  D.emit dbus $ signal { D.signalBody = body }
+
+polybarHook :: D.Client -> PP
+polybarHook dbus =
+  let wrapper c s | s /= "NSP" = wrap ("%{F" <> c <> "} ") " %{F-}" s
+                  | otherwise  = mempty
+      blue   = "#2E9AFE"
+      gray   = "#7F7F7F"
+      orange = "#ea4300"
+      purple = "#9058c7"
+      red    = "#722222"
+  in  def { ppOutput          = dbusOutput dbus
+          , ppCurrent         = wrapper blue
+          , ppVisible         = wrapper gray
+          , ppUrgent          = wrapper orange
+          , ppHidden          = wrapper gray
+          , ppHiddenNoWindows = wrapper red
+          , ppTitle           = wrapper purple . shorten 90
+          }
+
+myPolybarLogHook dbus = myLogHook <+> dynamicLogWithPP (polybarHook dbus)
+
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
@@ -351,15 +391,10 @@ myStartupHook = do
 
 -- Run xmonad with the settings you specify. No need to modify this.
 --
-main = xmonad $ fullscreenSupport $ docks $ ewmh defaults
-
--- A structure containing your configuration settings, overriding
--- fields in the default config. Any you don't override, will
--- use the defaults defined in xmonad/XMonad/Config.hs
---
--- No need to modify this.
---
-defaults = def {
+main :: IO ()
+main = mkDbusClient >>= main'
+main' :: D.Client -> IO ()
+main' dbus = xmonad . fullscreenSupport . docks . ewmh $ def {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
@@ -378,7 +413,7 @@ defaults = def {
         manageHook = myManageHook, 
         layoutHook = gaps [(L,8), (R,8), (U,64), (D,8)] $ spacingRaw True (Border 8 8 8 8) True (Border 8 8 8 8) True $ smartBorders $ myLayout,
         handleEventHook    = myEventHook,
-        logHook            = myLogHook,
+        logHook            = myPolybarLogHook dbus,
         startupHook        = myStartupHook >> addEWMHFullscreen
     }
 

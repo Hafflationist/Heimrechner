@@ -17,8 +17,10 @@
         size = 32;
         deviation = 4.0;
       };
-      cornerRadius = 16;
     };
+    extraArgs = [
+      "--corner-radius 8"
+    ];
     #extraOptions = ''
     #  blur-method = "dual_kawase";
     #  blur-strength = 10;
