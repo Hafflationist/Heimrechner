@@ -8,6 +8,7 @@ import Graphics.X11.ExtraTypes.XF86 (xF86XK_AudioLowerVolume, xF86XK_AudioRaiseV
 import XMonad.Hooks.EwmhDesktops ( ewmh )
 import Control.Monad ( join, when )
 import XMonad.Layout.NoBorders
+import XMonad.Layout.MultiColumns
 import XMonad.Hooks.ManageDocks
     ( avoidStruts, docks, manageDocks, Direction2D(D, L, R, U) )
 import XMonad.Hooks.ManageHelpers ( doFullFloat, isFullscreen )
@@ -311,8 +312,9 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = avoidStruts(tiled ||| Mirror tiled ||| Full)
+myLayout = avoidStruts(ultrawide ||| tiled ||| Mirror tiled ||| Full)
   where
+     ultrawide = multiCol [1] 1 0.01 (-0.5)
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
 
