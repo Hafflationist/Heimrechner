@@ -19,8 +19,10 @@ in
 [
   ./git
   ./kitty
+  #./neovim-ide
   ./rofi
   ./xmonad
+  ./zathura
   ./zsh
   #more
 ]
