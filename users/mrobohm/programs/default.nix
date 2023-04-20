@@ -19,7 +19,7 @@ in
 [
   ./git
   ./kitty
-  #./neovim-ide
+  ./neovim
   ./rofi
   ./xmonad
   ./zathura
