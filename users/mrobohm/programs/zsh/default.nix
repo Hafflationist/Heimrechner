@@ -9,6 +9,7 @@
       ll = "ls -alF";
       recompile = "sudo nixos-rebuild switch";
       conf = "cd /etc/nixos/users/mrobohm";
+      schnitt = "cd /mnt/schnitt";
     };
     plugins = [ 
       {
