@@ -13,9 +13,10 @@
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -94,6 +95,7 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.mrobohm = {
+    initialPassword = "hugobert";
     isNormalUser = true;
     description = "Rainer Zufall";
     extraGroups = [ "networkmanager" "wheel" ];

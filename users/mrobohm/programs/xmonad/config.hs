@@ -135,8 +135,7 @@ clipboardy = spawn "rofi -modi \"\63053 :greenclip print\" -show \"\63053 \" -ru
 centerlaunch = spawn "exec ~/bin/eww open-many blur_full weather profile quote search_full disturb-icon vpn-icon home_dir screenshot power_full reboot_full lock_full logout_full suspend_full"
 sidebarlaunch = spawn "exec ~/bin/eww open-many weather_side time_side smol_calendar player_side sys_side sliders_side"
 ewwclose = spawn "exec ~/bin/eww close-all"
-maimcopy = spawn "maim -s | xclip -selection clipboard -t image/png && notify-send \"Screenshot\" \"Copied to Clipboard\" -i flameshot"
-maimsave = spawn "maim -s ~/Desktop/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send \"Screenshot\" \"Saved to Desktop\" -i flameshot"
+flameshot = spawn "flameshot gui"
 rofi_launcher = spawn "rofi -no-lazy-grab -show drun -modi run,drun,window -theme /etc/nixos/users/mrobohm/programs/rofi/launcher/style -drun-icon-theme \"candy-icons\" "
 
 
@@ -147,7 +146,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
       ((modm,               xK_Return), spawn $ XMonad.terminal conf)
 
     -- lock screen
-    , ((modm,               xK_F1    ), spawn "betterlockscreen -l")
+    , ((modm .|. shiftMask, xK_l     ), spawn "betterlockscreen -l")
 
     -- launch rofi and dashboard
     , ((modm,               xK_o     ), rofi_launcher)
@@ -171,8 +170,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0,                    xF86XK_MonBrightnessDown), spawn "brightnessctl s 10-%")
  
     -- Screenshot
-    , ((0,                    xK_Print), maimcopy)
-    , ((modm,                 xK_Print), maimsave)
+    , ((0,                    xK_Print), flameshot)
+    , ((modm,                 xK_Print), flameshot)
+    , ((modm,                 xK_p), flameshot)
 
     -- My Stuff
     , ((modm,               xK_b     ), spawn "exec ~/bin/bartoggle")
