@@ -1,6 +1,6 @@
 { pkgs, config, lib, stdenv, ... }:
 let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+  unstable = import <unstable> { config = { allowUnfree = true; }; };
 in {
     home.username = "mrobohm";
     #home.homeDirectory = /home/mrobohm;
@@ -10,13 +10,17 @@ in {
       librewolf
       brave
       # Normalfag-Programme
-      discord spotify tdesktop
+      discord betterdiscordctl spotify tdesktop whatsapp-for-linux
       # Desktopumgebung
       killall bitwarden
       feh viu
+      flameshot
+      betterlockscreen
       # Reiszeug
       neofetch cbonsai htop bpytop
       glxinfo
+      # Entwicklung
+      unstable.jetbrains.idea-community maven unstable.jdk gcc12
     ];
     xdg.mimeApps.defaultApplications = {
       "x-scheme-handler/http" = "librewolf.desktop";
