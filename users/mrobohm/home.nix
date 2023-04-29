@@ -1,7 +1,8 @@
 { pkgs, config, lib, stdenv, ... }:
-let
-  unstable = import <unstable> { config = { allowUnfree = true; }; };
-in {
+#let
+#  unstable = import <unstable> { config = { allowUnfree = true; }; };
+#in {
+{
     home.username = "mrobohm";
     #home.homeDirectory = /home/mrobohm;
     home.stateVersion = "22.11";
@@ -17,10 +18,11 @@ in {
       flameshot
       betterlockscreen
       # Reiszeug
-      neofetch cbonsai htop bpytop
+      neofetch cbonsai htop btop
       glxinfo
       # Entwicklung
-      unstable.jetbrains.idea-community maven unstable.jdk gcc12
+      #unstable.jetbrains.idea-community maven unstable.jdk gcc12
+      jetbrains.idea-community maven jdk gcc12
     ];
     xdg.mimeApps.defaultApplications = {
       "x-scheme-handler/http" = "librewolf.desktop";

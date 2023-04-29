@@ -9,8 +9,14 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./wm/xmonad.nix
-      <home-manager/nixos>
+      #<home-manager/nixos>
     ];
+
+  nixpkgs.overlays = [
+    (self: super: {
+      fcitx-engines = pkgs.fcitx5;
+    })
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
