@@ -7,6 +7,7 @@
       extraPackages = hp: [
         hp.dbus
         hp.monad-logger
+        hp.taffybar
       ];
       config = ./config.hs;
     };

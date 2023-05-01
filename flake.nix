@@ -15,11 +15,13 @@
       url = github:Mic92/tex2nix/4b17bc0;
       inputs.utils.follows = "nixpkgs";
     };
-    gtk-sni-tray.url = github:taffybar/gtk-sni-tray/master;
-    gtk-strut.url = github:taffybar/gtk-strut/master;
+    taffybar = {
+      url = "github:sherubthakur/taffybar";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs @ { self, nixpkgs, nurpkgs, home-manager, tex2nix, gtk-sni-tray, gtk-strut }:
+  outputs = inputs @ { self, nixpkgs, nurpkgs, home-manager, tex2nix, taffybar }:
   let
     system = "x86_64-linux";
   in 

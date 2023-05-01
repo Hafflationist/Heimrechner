@@ -1,0 +1,35 @@
+{ pkgs, colorscheme, ... }:
+let
+  custom-panel-launch = pkgs.writeScriptBin "custom-panel-launch" ''
+    #!/${pkgs.stdenv.shell}
+    killall custom-taffybar
+    status-notifier-watcher &
+    custom-taffybar
+    custom-taffybar
+    custom-taffybar
+    custom-taffybar
+    custom-taffybar
+    custom-taffybar
+  '';
+  custom-taffybar =
+    (import ../../flakes/taffybar/default.nix) { inherit pkgs; };
+in
+{
+  home.packages = with pkgs; [
+    custom-panel-launch
+    custom-taffybar
+    haskellPackages.status-notifier-item
+  ];
+
+  home.file.".config/taffybar/taffybar.css".source = ../../flakes/taffybar/taffybar.css;
+  home.file.".config/taffybar/colors.css".text = ''
+    @define-color font-color #ccccce;
+    @define-color accent #c50ed2;
+    @define-color bg #0d0d1b;
+    @define-color bg-alt #690DF6;
+    @define-color red #ff4444;
+    @define-color menu-background-color @bg;
+    @define-color menu-background-color-selected @bg-alt;
+    @define-color menu-font-color @font-color;
+  '';
+}

@@ -3,6 +3,7 @@ import XMonad.Layout.Fullscreen
     ( fullscreenEventHook, fullscreenManageHook, fullscreenSupport, fullscreenFull )
 import Data.Monoid ()
 import System.Exit ()
+import System.Taffybar.Support.PagerHints (pagerHints)
 import XMonad.Util.SpawnOnce ( spawnOnce )
 import Graphics.X11.ExtraTypes.XF86 (xF86XK_AudioLowerVolume, xF86XK_AudioRaiseVolume, xF86XK_AudioMute, xF86XK_MonBrightnessDown, xF86XK_MonBrightnessUp, xF86XK_AudioPlay, xF86XK_AudioPrev, xF86XK_AudioNext)
 import XMonad.Hooks.EwmhDesktops ( ewmh )
@@ -383,6 +384,7 @@ myStartupHook = do
   --spawn "xsetroot -cursor_name left_ptr"
   --spawn "exec ~/bin/lock.sh"
   spawnOnce "feh --bg-scale /etc/nixos/users/mrobohm/programs/xmonad/steilo.jpg"
+  spawn "custom-panel-launch"
   --spawnOnce "picom --experimental-backends"
   --spawnOnce "greenclip daemon"
   --spawnOnce "dunst"
@@ -396,7 +398,8 @@ myStartupHook = do
 main :: IO ()
 main = mkDbusClient >>= main'
 main' :: D.Client -> IO ()
-main' dbus = xmonad . fullscreenSupport . docks . ewmh $ def {
+--main' dbus = xmonad . fullscreenSupport . docks . ewmh $ def {
+main' dbus = xmonad . fullscreenSupport . docks . ewmh . pagerHints $ def {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
