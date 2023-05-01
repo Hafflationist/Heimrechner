@@ -17,13 +17,16 @@
       feh viu
       flameshot
       betterlockscreen
+      ranger
       # Reiszeug
       neofetch cbonsai htop btop
+      nix-output-monitor
       glxinfo
       # Entwicklung
       #unstable.jetbrains.idea-community maven unstable.jdk gcc12
       jetbrains.idea-community maven jdk gcc12
     ];
+    xdg.mimeApps.enable = true;
     xdg.mimeApps.defaultApplications = {
       "x-scheme-handler/http" = "librewolf.desktop";
       "x-scheme-handler/https" = "librewolf.desktop";
@@ -38,6 +41,7 @@
       "application/x-extension-xhtml" = "librewolf.desktop";
       "application/x-extension-xht" = "librewolf.desktop";
       "application/x-www-browser" = "librewolf.desktop";
+      "application/pdf" = "org.pwmt.zathura.desktop";
       "x-www-browser" = "librewolf.desktop";
       "x-scheme-handler/webcal" = "librewolf.desktop";
     };
