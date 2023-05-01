@@ -12,12 +12,6 @@
       #<home-manager/nixos>
     ];
 
-  nixpkgs.overlays = [
-    (self: super: {
-      fcitx-engines = pkgs.fcitx5;
-    })
-  ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -52,12 +46,7 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
   #services.xserver.windowManager.xmonad = {
   #  enable = true;
   #  enableContribAndExtras = true;
@@ -66,8 +55,16 @@
 
   # Configure keymap in X11
   services.xserver = {
+    displayManager.sddm.enable = true;
+    enable = true;
     layout = "de";
     xkbVariant = "";
+    serverFlagsSection = ''
+      Option "StandbyTime" "0"
+      Option "SuspendTime" "0"
+      Option "OffTime" "0"
+      Option "BlankTime" "0"
+    '';
   };
 
   # Configure console keymap
