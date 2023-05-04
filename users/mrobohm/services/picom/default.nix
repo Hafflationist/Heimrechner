@@ -12,7 +12,7 @@
     opacityRules = [
       "100:class_g =  'jetbrains-idea-ce'"
     ];
-    shadow = false;
+    shadow = true;
     extraArgs = [
       "--corner-radius 32"
       "--blur-method \"dual_kawase\""
