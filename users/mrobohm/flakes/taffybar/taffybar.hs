@@ -46,7 +46,8 @@ import System.Taffybar.Widget
     workspacesNew,
   )
 import System.Taffybar.Widget.SNITray (sniTrayNew)
-import System.Taffybar.Widget.SimpleClock (ClockConfig (clockFormatString))
+import System.Taffybar.Widget.SimpleClock (ClockConfig (clockFormatString, clockUpdateStrategy))
+import System.Taffybar.Widget.SimpleClock (ClockUpdateStrategy(ConstantInterval))
 
 main :: IO ()
 main = startTaffybar exampleTaffybarConfig
@@ -62,8 +63,8 @@ myConfig =
       centerWidgets = map (>>= buildContentsBox) [windowsW],
       endWidgets = powerMenu : map (>>= buildContentsBox) [clock, tray],
       barPosition = Top,
-      barHeight = ExactSize 50,
-      widgetSpacing = 10,
+      barHeight = ExactSize 48,
+      widgetSpacing = 8,
       monitorsAction = usePrimaryMonitor
     }
 
@@ -80,8 +81,17 @@ myWorkspacesConfig =
 workspaces :: TaffyIO Widget
 workspaces = workspacesNew myWorkspacesConfig
 
+cc :: ClockConfig
+cc = 
+    defaultClockConfig {
+        clockFormatString = "%  %Y-%m-%d %H:%M:%S  ",
+	clockUpdateStrategy = ConstantInterval 0.2
+    }
+
+
 clock :: TaffyIO Widget
-clock = textClockNewWith $ defaultClockConfig {clockFormatString = "  %a %_d %b   %I:%M %p  "}
+clock = textClockNewWith $ cc
+
 
 myLayoutConfig :: LayoutConfig
 myLayoutConfig =
@@ -91,6 +101,7 @@ myLayoutConfig =
       layoutDisplay "Spacing Mirror Tall" = "▀▀▀"
       layoutDisplay "Spacing TwoPanePersistent" = "█ █"
       layoutDisplay "Spacing Accordion" = "▌█▐"
+      layoutDisplay "Spacing MultiCol" = "▌█▐"
       layoutDisplay "Spacing Grid" = "▚▚▚"
       layoutDisplay "Spacing GridRatio 0.5625" = "▚▚▚"
       layoutDisplay x = x

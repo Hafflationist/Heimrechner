@@ -4,12 +4,7 @@ let
     #!/${pkgs.stdenv.shell}
     killall custom-taffybar
     status-notifier-watcher &
-    custom-taffybar
-    custom-taffybar
-    custom-taffybar
-    custom-taffybar
-    custom-taffybar
-    custom-taffybar
+    while true; do custom-taffybar; done
   '';
   custom-taffybar =
     (import ../../flakes/taffybar/default.nix) { inherit pkgs; };
