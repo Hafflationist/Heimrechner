@@ -20,7 +20,9 @@ in
   ./git
   ./kitty
   ./taffybar
+  ./neofetch
   ./neovim
+  ./ranger
   ./rofi
   ./xmonad
   ./zathura

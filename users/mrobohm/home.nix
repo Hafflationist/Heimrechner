@@ -10,18 +10,29 @@
       zsh-powerlevel10k
       librewolf
       brave
+
       # Normalfag-Programme
       discord betterdiscordctl spotify tdesktop whatsapp-for-linux
+
+      # Libreoffice
+      libreoffice-qt
+      hunspell
+      hunspellDicts.de_DE
+
       # Desktopumgebung
       killall bitwarden
       feh viu
       flameshot
       betterlockscreen
-      ranger
+
+      # Grafikprogramme
+      gimp inkscape
+
       # Reiszeug
       neofetch cbonsai htop btop
       nix-output-monitor
       glxinfo
+
       # Entwicklung
       #unstable.jetbrains.idea-community maven unstable.jdk gcc12
       jetbrains.idea-community maven jdk gcc12
