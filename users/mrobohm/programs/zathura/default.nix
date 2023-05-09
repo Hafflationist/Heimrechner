@@ -13,7 +13,7 @@
       set recolor true
       set recolor-lightcolor \#0d0d1b
       set recolor-lightcolor rgba(26,29,43,0) 
-      set default-bg rgba(13,13,27,0.85)
+      set default-bg rgba(13,13,27,0.5)
       set recolor-keephue
       set selection-clipboard clipboard";
     #  builtins.readFile (config.scheme { templateRepo = inputs.base16-zathura; target = "recolor"; })

@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       window_padding_width = "16";
-      background_opacity = "0.85";
+      background_opacity = "0.5";
       #background_opacity = "0.25";
       background = "#0d0d1b";
       foreground = "#ccccce";
