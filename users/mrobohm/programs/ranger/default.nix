@@ -8,4 +8,5 @@
     highlight
   ];
   xdg.configFile."ranger/rc.conf".source = ./rc.conf;
+  xdg.configFile."ranger/rifle.conf".source = ./rifle.conf;
 }
