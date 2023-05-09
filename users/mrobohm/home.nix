@@ -53,6 +53,7 @@
       "application/x-extension-xht" = "librewolf.desktop";
       "application/x-www-browser" = "librewolf.desktop";
       "application/pdf" = "org.pwmt.zathura.desktop";
+      "application/html" = "librewolf.desktop";
       "x-www-browser" = "librewolf.desktop";
       "x-scheme-handler/webcal" = "librewolf.desktop";
     };
