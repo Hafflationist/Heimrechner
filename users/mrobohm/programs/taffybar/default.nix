@@ -17,11 +17,21 @@ in
   ];
 
   home.file.".config/taffybar/taffybar.css".source = ../../flakes/taffybar/taffybar.css;
+  #home.file.".config/taffybar/colors.css".text = ''
+  #  @define-color font-color #ccccce;
+  #  @define-color accent #c50ed2;
+  #  @define-color bg #0d0d1b;
+  #  @define-color bg-alt #690DF6;
+  #  @define-color red #ff4444;
+  #  @define-color menu-background-color @bg;
+  #  @define-color menu-background-color-selected @bg-alt;
+  #  @define-color menu-font-color @font-color;
+  #'';
   home.file.".config/taffybar/colors.css".text = ''
     @define-color font-color #ccccce;
     @define-color accent #c50ed2;
-    @define-color bg #0d0d1b;
-    @define-color bg-alt #690DF6;
+    @define-color bg rgba(13, 13, 27, 0.5);
+    @define-color bg-alt rgba(13, 13, 27, 0.8);
     @define-color red #ff4444;
     @define-color menu-background-color @bg;
     @define-color menu-background-color-selected @bg-alt;
