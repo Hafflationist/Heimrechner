@@ -62,9 +62,10 @@ myConfig =
     { startWidgets = workspaces : map (>>= buildContentsBox) [layout, musicPlayer],
       centerWidgets = map (>>= buildContentsBox) [windowsW],
       endWidgets = powerMenu : map (>>= buildContentsBox) [clock, tray],
+      barPadding = 24,
       barPosition = Top,
       barHeight = ExactSize 48,
-      widgetSpacing = 8,
+      widgetSpacing = 16,
       monitorsAction = usePrimaryMonitor
     }
 

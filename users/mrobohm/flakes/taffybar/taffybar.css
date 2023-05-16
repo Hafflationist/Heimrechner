@@ -11,7 +11,8 @@
 .taffy-box {
     border-style: solid;
     padding: 5px;
-    padding-left: 50px;
+    padding-left: 10px;
+    /*padding-left: 50px;*/
     font-size: 12pt;
     color: @font-color;
     border-color: @bg;
