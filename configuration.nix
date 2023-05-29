@@ -18,6 +18,11 @@
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.supportedFilesystems = [ "ntfs" ];
 
+  boot.initrd.systemd.enable = true;
+  boot.plymouth.enable = true;
+  boot.plymouth.theme = "bgrt";
+  boot.kernelParams = [ "quit" ];
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -117,6 +122,7 @@
   };
 
   hardware.opengl.enable = true;
+  hardware.opengl.driSupport32Bit = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -129,6 +135,8 @@
     killall
     feh
     gitAndTools.gitFull
+    #plymouth
+    nixos-bgrt-plymouth
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
