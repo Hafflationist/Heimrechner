@@ -189,7 +189,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- GAPS!!!
     , ((modm .|. controlMask, xK_g), sendMessage $ ToggleGaps)               -- toggle all gaps
-    , ((modm .|. shiftMask, xK_g), sendMessage $ setGaps [(L,8), (R,8), (U,64), (D,8)]) -- reset the GapSpec
+    , ((modm .|. shiftMask, xK_g), sendMessage $ setGaps [(L,8), (R,8), (U,88), (D,8)]) -- reset the GapSpec
     
     , ((modm .|. controlMask, xK_t), sendMessage $ IncGap 10 L)              -- increment the left-hand gap
     , ((modm .|. shiftMask, xK_t     ), sendMessage $ DecGap 10 L)           -- decrement the left-hand gap
@@ -416,7 +416,7 @@ main' dbus = xmonad . fullscreenSupport . docks . ewmh . pagerHints $ def {
 
       -- hooks, layouts
         manageHook = myManageHook, 
-        layoutHook = gaps [(L,8), (R,8), (U,64), (D,8)] $ spacingRaw True (Border 8 8 8 8) True (Border 8 8 8 8) True $ smartBorders $ myLayout,
+        layoutHook = gaps [(L,8), (R,8), (U,88), (D,8)] $ spacingRaw True (Border 8 8 8 8) True (Border 8 8 8 8) True $ smartBorders $ myLayout,
         handleEventHook    = myEventHook,
         logHook            = myPolybarLogHook dbus,
         startupHook        = myStartupHook >> addEWMHFullscreen
