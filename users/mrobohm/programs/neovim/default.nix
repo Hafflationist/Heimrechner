@@ -11,6 +11,7 @@
       fugitive
       nvim-notify
       { plugin = nvim-tree-lua; type = "lua"; config = builtins.readFile(./pluginConfig/tree-lua.lua); }
+      suda-vim
       vim-nix
       { plugin = vim-airline; config = "let g:airline_powerline_fonts = 1";}
       YouCompleteMe
