@@ -13,6 +13,7 @@
 
       # Normalfag-Programme
       discord betterdiscordctl spotify tdesktop whatsapp-for-linux
+      steam
 
       # Libreoffice
       libreoffice-qt
@@ -36,6 +37,9 @@
       # Entwicklung
       #unstable.jetbrains.idea-community maven unstable.jdk gcc12
       jetbrains.idea-community maven jdk gcc12
+
+      # Sonstiges
+      tree
     ];
     xdg.mimeApps.enable = true;
     xdg.mimeApps.defaultApplications = {

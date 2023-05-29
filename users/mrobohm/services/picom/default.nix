@@ -11,6 +11,7 @@
     fadeDelta = 5;
     opacityRules = [
       "100:class_g =  'jetbrains-idea-ce'"
+      "100:class_g =  'factorio'"
     ];
     shadow = true;
     extraArgs = [
