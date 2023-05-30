@@ -2,7 +2,7 @@
   description = "NixOS-Heimrechner";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:Hafflationist/nixpkgs/master";
     nurpkgs = {
       url = github:nix-community/NUR;
       inputs.nixpkgs.follows = "nixpkgs";

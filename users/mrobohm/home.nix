@@ -21,6 +21,7 @@
       hunspellDicts.de_DE
 
       # Desktopumgebung
+      libsForQt5.dolphin
       killall bitwarden
       feh viu
       flameshot
@@ -37,6 +38,9 @@
       # Entwicklung
       #unstable.jetbrains.idea-community maven unstable.jdk gcc12
       jetbrains.idea-community maven jdk gcc12
+      stack haskell-language-server
+      lua-language-server
+      nil
 
       # Sonstiges
       tree

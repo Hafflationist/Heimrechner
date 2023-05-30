@@ -5,10 +5,21 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
-    extraConfig = "set number";
+    extraConfig = "
+      set number
+      set tabstop=4
+      set shiftwidth=4
+      set expandtab
+    ";
     plugins =  with pkgs.vimPlugins; [
+      #coc-nvim
       { plugin = context-vim; config = "let g:context_highlight_normal = 'Normal'";}
       fugitive
+      { plugin = nightfox-nvim; type = "lua"; config = builtins.readFile(./pluginConfig/nightfox-nvim.lua); }
+      nui-nvim
+      { plugin = nvim-lspconfig; type = "lua"; config = builtins.readFile(./pluginConfig/lspconfig.lua); }
+      { plugin = nvim-navbuddy; type = "lua"; config = builtins.readFile(./pluginConfig/nvim-navbuddy.lua); }
+      nvim-navic
       nvim-notify
       { plugin = nvim-tree-lua; type = "lua"; config = builtins.readFile(./pluginConfig/tree-lua.lua); }
       suda-vim
