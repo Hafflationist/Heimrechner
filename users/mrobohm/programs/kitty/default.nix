@@ -12,7 +12,7 @@
       foreground = "#ccccce";
       selection_background = "#002a3a";
       selection_foreground = "#0d0f18";
-      cursor = "#ff0017";
+      cursor = "#ff0087";
       color0 = "#282828";
       color1 = "#ca1444";
       color2 = "#789aba";
