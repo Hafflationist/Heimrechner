@@ -9,7 +9,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./wm/xmonad.nix
-      #<home-manager/nixos>
     ];
 
   # Bootloader.
@@ -51,16 +50,19 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  # Enable the KDE Plasma Desktop Environment.
-  #services.xserver.windowManager.xmonad = {
-  #  enable = true;
-  #  enableContribAndExtras = true;
-  #  # config = builtins.readFile /home/mrobohm/.xmonad/xmonad.hs;
-  #};
-
   # Configure keymap in X11
   services.xserver = {
-    displayManager.sddm.enable = true;
+    displayManager.lightdm = {
+      enable = true;
+      greeters.pantheon.enable = true;
+      #greeters.enso.enable = true;
+      #greeters.enso.blur = true;
+      #greeters.enso.extraConfig = ''
+      #  time-format=%H:%M:%S
+      #  date-format=%Y-%m-%"
+      #  default-wallpaper=/etc/nixos/users/mrobohm/programs/xmonad/steilo.jpg
+      #'';
+    };
     enable = true;
     layout = "de";
     xkbVariant = "";
@@ -126,6 +128,8 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
