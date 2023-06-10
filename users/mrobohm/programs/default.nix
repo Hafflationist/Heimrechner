@@ -24,6 +24,7 @@ in
   ./neovim
   ./ranger
   ./rofi
+  ./weechat
   ./xmonad
   ./zathura
   ./zsh
