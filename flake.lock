@@ -376,7 +376,8 @@
         "nixpkgs": "nixpkgs",
         "nurpkgs": "nurpkgs",
         "taffybar": "taffybar",
-        "tex2nix": "tex2nix"
+        "tex2nix": "tex2nix",
+        "weechat-scripts": "weechat-scripts"
       }
     },
     "status-notifier-item": {
@@ -501,6 +502,22 @@
         "owner": "Mic92",
         "ref": "4b17bc0",
         "repo": "tex2nix",
+        "type": "github"
+      }
+    },
+    "weechat-scripts": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1680441158,
+        "narHash": "sha256-qG2MhJV83Db9sTCSf5r+TI78cOjyKeqcF2MGuYjgsMI=",
+        "owner": "weechat",
+        "repo": "scripts",
+        "rev": "d769ded84a7e7f25594d08f01d746967c409638a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "weechat",
+        "repo": "scripts",
         "type": "github"
       }
     }

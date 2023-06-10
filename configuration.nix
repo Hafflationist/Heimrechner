@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -101,6 +101,7 @@
   # services.xserver.libinput.enable = true;
 
   programs.zsh.enable = true;
+  programs.dconf.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -117,11 +118,11 @@
     #  thunderbird
     ];
   };
-  home-manager.users.mrobohm = { pkgs, ...}: {
-    programs.bash.enable = true;
-    programs.zsh.enable = true;
-    imports = [ ./users/mrobohm/home.nix ];
-  };
+  #home-manager.users.mrobohm = { pkgs, ...}: {
+  #  programs.bash.enable = true;
+  #  programs.zsh.enable = true;
+  #  imports = [ ./users/mrobohm/home.nix ];
+  #};
 
   hardware.opengl.enable = true;
   hardware.opengl.driSupport32Bit = true;
