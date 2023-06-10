@@ -8,7 +8,6 @@
     home.stateVersion = "22.11";
     home.packages = with pkgs; [
       zsh-powerlevel10k
-      librewolf
       brave
 
       # Normalfag-Programme
@@ -72,5 +71,6 @@
     imports = builtins.concatMap import [
       ./programs
       ./services
+      ./misc
     ];
   }
