@@ -5,9 +5,9 @@
     enable = true;
     settings = {
       window_padding_width = "16";
-      background_opacity = "0.0";
+      #background_opacity = "0.0";
       background = "#11111b";
-      #background_opacity = "0.25";
+      background_opacity = "0.25";
       #background = "#0d0d1b";
       foreground = "#ccccce";
       selection_background = "#002a3a";
