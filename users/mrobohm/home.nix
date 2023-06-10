@@ -1,4 +1,4 @@
-{ pkgs, config, lib, stdenv, ... }:
+{ pkgs, lib, ... }:
 #let
 #  unstable = import <unstable> { config = { allowUnfree = true; }; };
 #in {
@@ -43,7 +43,7 @@
       nil
 
       # Sonstiges
-      tree
+      tree element-desktop _2048-in-terminal
     ];
     xdg.mimeApps.enable = true;
     xdg.mimeApps.defaultApplications = {
