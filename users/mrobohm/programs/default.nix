@@ -19,6 +19,7 @@ in
 [
   ./git
   ./kitty
+  ./librewolf
   ./taffybar
   ./neofetch
   ./neovim
