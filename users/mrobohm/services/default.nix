@@ -1,4 +1,3 @@
 [
   ./picom
-  ./polybar
 ]
