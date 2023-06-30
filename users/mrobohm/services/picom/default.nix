@@ -12,6 +12,7 @@
     opacityRules = [
       "100:class_g =  'jetbrains-idea-ce'"
       "100:class_g =  'factorio'"
+      "100:class_g =  '.openttd-wrapped'"
     ];
     shadow = true;
     extraArgs = [

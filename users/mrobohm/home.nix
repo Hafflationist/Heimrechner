@@ -1,7 +1,4 @@
-{ pkgs, lib, ... }:
-#let
-#  unstable = import <unstable> { config = { allowUnfree = true; }; };
-#in {
+{ pkgs, ... }:
 {
     home.username = "mrobohm";
     #home.homeDirectory = /home/mrobohm;
@@ -43,6 +40,7 @@
 
       # Sonstiges
       tree element-desktop _2048-in-terminal
+      openttd
     ];
     xdg.mimeApps.enable = true;
     xdg.mimeApps.defaultApplications = {
