@@ -12,9 +12,10 @@
       set expandtab
     ";
     plugins =  with pkgs.vimPlugins; [
-      { plugin = barbecue-nvim; type = "lua";config = "require(\"barbecue\").setup()";}
+      { plugin = barbecue-nvim; type = "lua"; config = "require(\"barbecue\").setup()"; }
+      { plugin = bufferline-nvim; type = "lua"; config = "require(\"bufferline\").setup{}"; }
       #coc-nvim
-      { plugin = context-vim; config = "let g:context_highlight_normal = 'Normal'";}
+      { plugin = context-vim; config = "let g:context_highlight_normal = 'Normal'"; }
       fugitive
       { plugin = neoscroll-nvim; type = "lua"; config = builtins.readFile(./pluginConfig/neoscroll.lua); }
       { plugin = nightfox-nvim; type = "lua"; config = builtins.readFile(./pluginConfig/nightfox-nvim.lua); }
@@ -23,7 +24,7 @@
       { plugin = nvim-lspconfig; type = "lua"; config = builtins.readFile(./pluginConfig/lspconfig.lua); }
       { plugin = nvim-navbuddy; type = "lua"; config = builtins.readFile(./pluginConfig/nvim-navbuddy.lua); }
       nvim-navic
-      nvim-notify
+      { plugin = nvim-notify; type = "lua"; config = builtins.readFile(./pluginConfig/notify.lua); }
       { plugin = nvim-peekup; type = "lua"; config = builtins.readFile(./pluginConfig/peekup.lua); }
       { plugin = nvim-scrollbar; type = "lua"; config = builtins.readFile(./pluginConfig/scrollbar.lua); }
       { plugin = nvim-tree-lua; type = "lua"; config = builtins.readFile(./pluginConfig/tree-lua.lua); }
