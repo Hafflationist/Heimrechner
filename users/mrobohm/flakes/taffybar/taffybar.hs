@@ -59,7 +59,8 @@ exampleTaffybarConfig =
 myConfig :: SimpleTaffyConfig
 myConfig =
   defaultSimpleTaffyConfig
-    { startWidgets = workspaces : map (>>= buildContentsBox) [layout, musicPlayer],
+    --{ startWidgets = workspaces : map (>>= buildContentsBox) [layout, musicPlayer],
+    { startWidgets = workspaces : map (>>= buildContentsBox) [layout],
       centerWidgets = map (>>= buildContentsBox) [windowsW],
       endWidgets = powerMenu : map (>>= buildContentsBox) [clock, tray],
       barPadding = 24,
