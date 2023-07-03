@@ -3,8 +3,13 @@
 {
   programs.zsh = {
     enable = true;
-    #syntaxHighlighting.enable = true;
-    #autosuggestions.enable = true;
+    enableAutosuggestions = true;
+    enableCompletion = true;
+    enableSyntaxHighlighting = true;
+    envExtra = "unset SSH_ASKPASS";
+    history = {
+      ignoreDups = true;
+    };
     shellAliases = {
       ll = "ls -alF";
       recompile = "sudo nixos-rebuild switch";
@@ -29,9 +34,5 @@
         src = pkgs.zsh-vi-mode;
       }
     ];
-    #oh-my-zsh = {
-    #  enable = true;
-    #  plugins = [ "powerlevel10k" ];
-    #};
   };
 }

@@ -6,8 +6,5 @@
     userName = "hafflationist";
     userEmail = "internetzverbindung(an)gmail(punkt)com";
     package = pkgs.gitFull;
-    extraConfig = {
-      credential.helper = "libsecret";
-    };
   };
 }
