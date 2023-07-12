@@ -40,6 +40,7 @@
 
       # Sonstiges
       tree element-desktop _2048-in-terminal
+      ripgrep # genutzt von Neovim-Telescope
       openttd
     ];
     xdg.mimeApps.enable = true;
