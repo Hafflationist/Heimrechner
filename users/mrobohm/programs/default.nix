@@ -20,11 +20,11 @@ in
   ./git
   ./kitty
   ./librewolf
-  ./taffybar
   ./neofetch
   ./neovim
   ./ranger
   ./rofi
+  ./taffybar
   ./weechat
   ./xmonad
   ./zathura
