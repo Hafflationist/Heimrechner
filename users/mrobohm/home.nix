@@ -1,3 +1,4 @@
+{ isMinimal }:
 { pkgs, ... }:
 {
     home.username = "mrobohm";
@@ -67,9 +68,9 @@
       enable = true;
     };
     nixpkgs.config.allowUnfree = true;
-    imports = builtins.concatMap import [
+    imports = builtins.concatLists (builtins.map (modules: modules { isMinimal = isMinimal; }) (builtins.map import [
       ./programs
       ./services
       ./misc
-    ];
+    ]));
   }

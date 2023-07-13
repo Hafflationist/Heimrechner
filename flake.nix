@@ -30,20 +30,33 @@
   outputs = { nixpkgs, ... } @ inputs:
   let
     system = "x86_64-linux";
+    homeConfig = import ./users/mrobohm/home.nix;
+    standardModules = isMinimal: [
+      ./configuration.nix
+      inputs.home-manager.nixosModules.home-manager
+      {
+        home-manager.useGlobalPkgs = true;
+        home-manager.users.mrobohm = homeConfig { isMinimal = isMinimal; };
+      }
+    ];
   in 
   {
     nixosConfigurations = {
       heimrechner = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./configuration.nix
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.users.mrobohm = ./users/mrobohm/home.nix;
-          }
-        ];
+        specialArgs = {
+          inherit inputs;
+          isMinimal = false;
+        };
+        modules = standardModules false;
+      };
+      klapprechner = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = {
+          inherit inputs;
+          isMinimal = true;
+        };
+        modules = standardModules true;
       };
     };
   };

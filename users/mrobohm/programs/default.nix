@@ -1,3 +1,4 @@
+{ isMinimal }:
 let
   more = { pkgs, ... }: {
     programs = {

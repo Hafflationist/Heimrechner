@@ -1,3 +1,4 @@
+{ isMinimal }:
 [
   #./qt
   ./gtk
