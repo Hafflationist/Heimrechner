@@ -16,6 +16,7 @@ let
       ssh.enable = true;
     };
   };
+  xmonadFunc = import ./xmonad;
 in
 [
   ./git
@@ -27,7 +28,7 @@ in
   ./rofi
   ./taffybar
   ./weechat
-  ./xmonad
+  (xmonadFunc { isMinimal = isMinimal; })
   ./zathura
   ./zsh
   #more

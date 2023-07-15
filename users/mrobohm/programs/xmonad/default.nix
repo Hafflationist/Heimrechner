@@ -1,3 +1,4 @@
+{ isMinimal }:
 {
   xsession = {
     enable = true;
@@ -9,7 +10,7 @@
         hp.monad-logger
         hp.taffybar
       ];
-      config = ./config.hs;
+      config = if isMinimal then ./configMinimal.hs else ./config.hs;
     };
   };
 }
