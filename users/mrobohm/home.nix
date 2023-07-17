@@ -38,6 +38,7 @@
       stack haskell-language-server
       lua-language-server
       nil
+      mycli
 
       # Sonstiges
       tree element-desktop _2048-in-terminal
