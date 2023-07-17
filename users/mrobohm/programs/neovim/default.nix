@@ -16,6 +16,7 @@
       { plugin = bufferline-nvim; type = "lua"; config = "require(\"bufferline\").setup{}"; }
       #coc-nvim
       { plugin = context-vim; config = "let g:context_highlight_normal = 'Normal'"; }
+      csv-vim
       fugitive
       { plugin = neoscroll-nvim; type = "lua"; config = builtins.readFile(./pluginConfig/neoscroll.lua); }
       { plugin = nightfox-nvim; type = "lua"; config = builtins.readFile(./pluginConfig/nightfox-nvim.lua); }
