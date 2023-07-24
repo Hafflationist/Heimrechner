@@ -10,14 +10,16 @@
       set tabstop=4
       set shiftwidth=4
       set expandtab
+      nnoremap <C-c> :bp\\|bd #<CR>
     ";
     plugins =  with pkgs.vimPlugins; [
       { plugin = barbecue-nvim; type = "lua"; config = "require(\"barbecue\").setup()"; }
       { plugin = bufferline-nvim; type = "lua"; config = "require(\"bufferline\").setup{}"; }
       #coc-nvim
       { plugin = context-vim; config = "let g:context_highlight_normal = 'Normal'"; }
-      csv-vim
       fugitive
+      { plugin = gitsigns-nvim; type = "lua"; config = builtins.readFile(./pluginConfig/gitsigns.lua); }
+      { plugin = haskell-tools-nvim; type = "lua"; config = builtins.readFile(./pluginConfig/haskell.lua); }
       { plugin = neoscroll-nvim; type = "lua"; config = builtins.readFile(./pluginConfig/neoscroll.lua); }
       { plugin = nightfox-nvim; type = "lua"; config = builtins.readFile(./pluginConfig/nightfox-nvim.lua); }
       { plugin = noice-nvim; type = "lua"; config = builtins.readFile(./pluginConfig/noice.lua); }
@@ -29,6 +31,7 @@
       { plugin = nvim-peekup; type = "lua"; config = builtins.readFile(./pluginConfig/peekup.lua); }
       { plugin = nvim-scrollbar; type = "lua"; config = builtins.readFile(./pluginConfig/scrollbar.lua); }
       { plugin = nvim-tree-lua; type = "lua"; config = builtins.readFile(./pluginConfig/tree-lua.lua); }
+      nvim-treesitter.withAllGrammars
       suda-vim
       { plugin = telescope-nvim; type = "lua"; config = builtins.readFile(./pluginConfig/telescope.lua); }
       vim-nix
