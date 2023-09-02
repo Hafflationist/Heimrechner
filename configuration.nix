@@ -109,7 +109,7 @@
     initialPassword = "hugobert";
     isNormalUser = true;
     description = "Rainer Zufall";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "virtualbox" ];
     packages = with pkgs; [
       firefox
       kate
@@ -143,6 +143,9 @@
     #plymouth
     nixos-bgrt-plymouth
   ];
+
+   virtualisation.virtualbox.host.enable = true;
+   users.extraGroups.vboxusers.members = [ "virtualbox" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
