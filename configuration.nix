@@ -52,16 +52,10 @@
 
   # Configure keymap in X11
   services.xserver = {
+    #videoDrivers = [ "nvidia" ];
     displayManager.lightdm = {
       enable = true;
       greeters.pantheon.enable = true;
-      #greeters.enso.enable = true;
-      #greeters.enso.blur = true;
-      #greeters.enso.extraConfig = ''
-      #  time-format=%H:%M:%S
-      #  date-format=%Y-%m-%"
-      #  default-wallpaper=/etc/nixos/users/mrobohm/programs/xmonad/steilo.jpg
-      #'';
     };
     enable = true;
     layout = "de";

@@ -18,6 +18,7 @@
       hunspellDicts.de_DE
 
       # Desktopumgebung
+      masterpdfeditor
       libsForQt5.dolphin
       killall bitwarden
       feh viu
@@ -25,6 +26,7 @@
       xsel      # benötigt für ocr
       tesseract # benötigt für ocr
       betterlockscreen
+      deadbeef
 
       # Grafikprogramme
       gimp inkscape
@@ -33,6 +35,7 @@
       neofetch cbonsai htop btop
       nix-output-monitor
       glxinfo
+      cowsay
 
       # Entwicklung
       #unstable.jetbrains.idea-community maven unstable.jdk gcc12
