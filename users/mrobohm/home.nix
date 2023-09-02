@@ -22,6 +22,8 @@
       killall bitwarden
       feh viu
       flameshot
+      xsel      # benötigt für ocr
+      tesseract # benötigt für ocr
       betterlockscreen
 
       # Grafikprogramme

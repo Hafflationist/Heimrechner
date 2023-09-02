@@ -137,6 +137,7 @@ centerlaunch = spawn "exec ~/bin/eww open-many blur_full weather profile quote s
 sidebarlaunch = spawn "exec ~/bin/eww open-many weather_side time_side smol_calendar player_side sys_side sliders_side"
 ewwclose = spawn "exec ~/bin/eww close-all"
 flameshot = spawn "flameshot gui"
+ocr = spawn "flameshot gui -r | tesseract - - | xsel -ib"
 rofi_launcher = spawn "rofi -no-lazy-grab -show drun -modi run,drun,window -theme /etc/nixos/users/mrobohm/programs/rofi/launcher/style -drun-icon-theme \"candy-icons\" "
 
 
@@ -174,6 +175,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0,                    xK_Print), flameshot)
     , ((modm,                 xK_Print), flameshot)
     , ((modm,                 xK_p), flameshot)
+    , ((modm,                 xK_t), ocr)
 
     -- My Stuff
     , ((modm,               xK_b     ), spawn "exec ~/bin/bartoggle")
@@ -240,7 +242,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_l     ), sendMessage Expand)
 
     -- Push window back into tiling
-    , ((modm,               xK_t     ), withFocused $ windows . W.sink)
+    --, ((modm,               xK_t     ), withFocused $ windows . W.sink)
 
     -- Increment the number of windows in the master area
     , ((modm              , xK_comma ), sendMessage (IncMasterN 1))
