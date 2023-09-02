@@ -35,10 +35,11 @@
       # Entwicklung
       #unstable.jetbrains.idea-community maven unstable.jdk gcc12
       jetbrains.idea-community maven jdk gcc12
-      stack haskell-language-server
+      cabal-install stack haskell-language-server
       lua-language-server
       nil
       mycli
+      ghc # wird auch von neovim benötigt
 
       # Sonstiges
       tree element-desktop _2048-in-terminal

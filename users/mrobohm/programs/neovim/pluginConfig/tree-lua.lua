@@ -6,7 +6,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 local api = require "nvim-tree.api"
-vim.keymap.set('n', '<leader>b', api.tree.toggle, {})
+vim.keymap.set('n', '<space>b', api.tree.toggle, {})
 
 require("nvim-tree").setup({
     sort_by = "case_sensitive",

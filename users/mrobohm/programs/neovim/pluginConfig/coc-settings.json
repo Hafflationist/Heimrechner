@@ -1,0 +1,77 @@
+{
+  "codeLens.enable": true,
+  "colors.enable": true,
+  "diagnostic": {
+    "errorSign": "",
+    "infoSign": "",
+    "hintSign": "󰈽",
+    "messageDelay": 0,
+    "virtualText": false,
+    "floatConfig": {
+      "border": true,
+      "rounded": true,
+      "title": "Fehlermeldung",
+      "winblend": 15
+    }
+  },
+  "hover": {
+    "floatConfig": {
+      "border": true,
+      "rounded": true,
+      "title": "Schwebedokumentation",
+      "winblend": 30
+    }
+  },
+  "suggest": {
+    "completionItemKindLabels": {
+      "text": "󰦨",
+      "method": "󰊕",
+      "function": "󰊕",
+      "constructor": "󰈏",
+      "field": "󰽏",
+      "variable": "󰫧",
+      "class": "",
+      "interface": "",
+      "module": "󰕳",
+      "property": "",
+      "unit": "U",
+      "value": "v",
+      "enum": "",
+      "keyword": "",
+      "snippet": "",
+      "color": "",
+      "file": "",
+      "reference": "",
+      "folder": "",
+      "enumMember": "",
+      "constant": "",
+      "struct": "",
+      "event": "",
+      "operator": "",
+      "typeParameter": "",
+      "default": ""
+    },
+    "noselect": true,
+    "snippetIndicator": "󰁌",
+    "floatConfig": {
+      "border": true,
+      "rounded": true,
+      "title": "Vorschläge",
+      "winblend": 30
+    }
+  },
+  "languageserver": {
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": ["--lsp"],
+      "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
+      "filetypes": ["haskell", "lhaskell"]
+    },
+    "nix": {
+      "command": "rnix-lsp",
+      "filetypes": [
+        "nix"
+      ]
+    }
+  }
+}
