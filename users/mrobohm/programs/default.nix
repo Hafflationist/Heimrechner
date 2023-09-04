@@ -22,6 +22,7 @@ in
   ./git
   ./kitty
   ./librewolf
+  ./lsd
   ./neofetch
   ./neovim
   ./ranger

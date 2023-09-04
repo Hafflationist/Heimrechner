@@ -11,7 +11,6 @@
       ignoreDups = true;
     };
     shellAliases = {
-      ll = "ls -alF";
       recompile = "sudo nixos-rebuild switch";
       rebuild = "sudo nixos-rebuild switch --flake '/etc/nixos#heimrechner'";
       conf = "cd /etc/nixos";
