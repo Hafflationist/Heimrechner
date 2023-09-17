@@ -20,6 +20,7 @@ let
 in
 [
   ./git
+  ./java
   ./kitty
   ./librewolf
   ./lsd

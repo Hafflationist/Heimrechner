@@ -39,7 +39,7 @@
 
       # Entwicklung
       #unstable.jetbrains.idea-community maven unstable.jdk gcc12
-      jetbrains.idea-community maven jdk gcc12
+      jetbrains.idea-community maven gcc12
       cabal-install stack haskell-language-server
       lua-language-server
       nil
