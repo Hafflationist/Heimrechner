@@ -28,6 +28,7 @@ in
   ./neovim
   ./ranger
   ./rofi
+  #./spicetify
   ./taffybar
   ./weechat
   (xmonadFunc { isMinimal = isMinimal; })

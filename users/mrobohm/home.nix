@@ -1,5 +1,5 @@
 { isMinimal }:
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
     home.username = "mrobohm";
     #home.homeDirectory = /home/mrobohm;

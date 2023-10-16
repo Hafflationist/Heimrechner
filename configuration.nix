@@ -52,7 +52,7 @@
 
   # Configure keymap in X11
   services.xserver = {
-    #videoDrivers = [ "nvidia" ];
+    videoDrivers = [ "nvidia" ];
     displayManager.lightdm = {
       enable = true;
       greeters.pantheon.enable = true;
