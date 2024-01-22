@@ -18,9 +18,11 @@
   boot.supportedFilesystems = [ "ntfs" ];
 
   boot.initrd.systemd.enable = true;
-  boot.plymouth.enable = true;
-  boot.plymouth.theme = "bgrt";
-  boot.kernelParams = [ "quit" ];
+  #boot.plymouth.enable = true;
+  #boot.plymouth.theme = "bgrt";
+  #boot.kernelParams = [ "quit" ];
+
+  systemd.services.NetworkManager-wait-online.enable = false;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
