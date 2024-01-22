@@ -52,7 +52,7 @@
 
   # Configure keymap in X11
   services.xserver = {
-    videoDrivers = [ "nvidia" ];
+    #videoDrivers = [ "nvidia" ];
     displayManager.lightdm = {
       enable = true;
       greeters.pantheon.enable = true;
@@ -126,6 +126,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.optimise.automatic = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
