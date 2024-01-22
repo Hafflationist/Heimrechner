@@ -50,6 +50,7 @@
       tree element-desktop _2048-in-terminal
       ripgrep # genutzt von Neovim-Telescope
       openttd
+      lutris wineWowPackages.stable
     ];
     xdg.mimeApps.enable = true;
     xdg.mimeApps.defaultApplications = {
