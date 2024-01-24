@@ -386,6 +386,7 @@ myStartupHook = do
   --spawn "xsetroot -cursor_name left_ptr"
   --spawn "exec ~/bin/lock.sh"
   spawn "custom-panel-launch"
+  spawnOnce "setxkbmap de"
   --spawnOnce "picom --experimental-backends"
   --spawnOnce "greenclip daemon"
   --spawnOnce "dunst"

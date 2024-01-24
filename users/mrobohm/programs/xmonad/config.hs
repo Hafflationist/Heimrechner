@@ -386,6 +386,7 @@ myStartupHook = do
   --spawn "xsetroot -cursor_name left_ptr"
   --spawn "exec ~/bin/lock.sh"
   spawnOnce "feh --bg-scale /etc/nixos/users/mrobohm/programs/xmonad/lilaBrut.jpg"
+  spawnOnce "setxkbmap de"
   spawn "custom-panel-launch"
   --spawnOnce "picom --experimental-backends"
   --spawnOnce "greenclip daemon"
