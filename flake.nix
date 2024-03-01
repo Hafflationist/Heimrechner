@@ -16,7 +16,7 @@
       #inputs.utils.follows = "nixpkgs";
     };
     taffybar = {
-      url = "github:sherubthakur/taffybar";
+      url = "github:nixypanda/taffybar";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     weechat-scripts = {
