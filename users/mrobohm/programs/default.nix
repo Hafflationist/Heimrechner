@@ -26,6 +26,7 @@ in
   ./lsd
   ./neofetch
   ./neovim
+  ./nushell
   ./ranger
   ./rofi
   ./taffybar
