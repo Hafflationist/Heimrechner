@@ -110,7 +110,7 @@
     packages = with pkgs; [
       firefox
       kate
-      vim
+      inputs.neovim-flocke.packages.${pkgs.system}.neovim
     #  home-manager
     #  thunderbird
     ];

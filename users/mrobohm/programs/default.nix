@@ -25,7 +25,7 @@ in
   ./librewolf
   ./lsd
   ./neofetch
-  ./neovim
+  #./neovim
   ./nushell
   ./ranger
   ./rofi
