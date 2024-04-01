@@ -4,7 +4,7 @@
   services = {
     xserver = {
       enable = true;
-      layout = "de";
+      xkb.layout = "de";
       displayManager.defaultSession = "none+xmonad";
       windowManager.xmonad = {
         enable = true;

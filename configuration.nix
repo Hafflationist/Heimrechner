@@ -60,8 +60,8 @@
       greeters.pantheon.enable = true;
     };
     enable = true;
-    layout = "de";
-    xkbVariant = "";
+    xkb.layout = "de";
+    xkb.variant = "";
     serverFlagsSection = ''
       Option "StandbyTime" "0"
       Option "SuspendTime" "0"
@@ -164,7 +164,7 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     fira-code
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];

@@ -3,9 +3,9 @@
 {
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
     envExtra = "unset SSH_ASKPASS";
     history = {
       ignoreDups = true;

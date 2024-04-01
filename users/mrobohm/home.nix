@@ -11,6 +11,7 @@
       # Normalfag-Programme
       discord betterdiscordctl tdesktop whatsapp-for-linux
       steam
+      thunderbird
 
       # Libreoffice
       libreoffice-qt
@@ -27,6 +28,7 @@
       tesseract # benötigt für ocr
       betterlockscreen
       deadbeef
+      warp-terminal
 
       # Grafikprogramme
       gimp inkscape
@@ -50,7 +52,8 @@
       tree element-desktop _2048-in-terminal
       ripgrep # genutzt von Neovim-Telescope
       openttd
-      lutris wineWowPackages.stable
+      lutris wineWowPackages.stable r2modman
+      mattermost
     ];
     xdg.mimeApps.enable = true;
     xdg.mimeApps.defaultApplications = {
