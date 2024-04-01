@@ -250,11 +250,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1711981647,
-        "narHash": "sha256-KjHHojNNVM8L4pBEE6ZtO2eDnASPj6koJn6Gjm0aJcQ=",
+        "lastModified": 1711987191,
+        "narHash": "sha256-OBcXxv1Uv4q+eEOgnizT96XkqDLbA8tPRic9fQbxOew=",
         "owner": "Hafflationist",
         "repo": "neovim-flocke",
-        "rev": "54149af0d27e2f0abb1d90c6cd6c8e43f29fd4cf",
+        "rev": "029578bc44fb0837dfbefc97d400a5db2777f046",
         "type": "github"
       },
       "original": {
@@ -404,11 +404,11 @@
     },
     "nurpkgs": {
       "locked": {
-        "lastModified": 1711979987,
-        "narHash": "sha256-zlxP7Z+tJoJwv4X9dXXs7J5Du9SoYbpOEWBKf06e2X4=",
+        "lastModified": 1711986269,
+        "narHash": "sha256-2P3LmeDijOQXGuJ/Rxubuu+8UGf7lJhpFGvzaU+dpDU=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "d4b2d617721d968a7811b03ae2095af0d32a8180",
+        "rev": "fbfc9b742a6349690acd5923a02a214930d34baf",
         "type": "github"
       },
       "original": {
