@@ -250,11 +250,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1711987191,
-        "narHash": "sha256-OBcXxv1Uv4q+eEOgnizT96XkqDLbA8tPRic9fQbxOew=",
+        "lastModified": 1711987889,
+        "narHash": "sha256-RNKGwzREKwrtWcAENCIh49gHtC9MlCeeW9Sb+4YYJ94=",
         "owner": "Hafflationist",
         "repo": "neovim-flocke",
-        "rev": "029578bc44fb0837dfbefc97d400a5db2777f046",
+        "rev": "ad32178e428b07a24dd5dc4eb5fdc0242f49d53b",
         "type": "github"
       },
       "original": {
