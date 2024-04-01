@@ -760,3 +760,5 @@ $env.config = {
         }
     ]
 }
+
+$env.SSH_ASKPASS = ""
