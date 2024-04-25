@@ -22,6 +22,7 @@ in
   ./git
   ./java
   ./kitty
+  ./lf
   ./librewolf
   ./lsd
   ./neofetch
