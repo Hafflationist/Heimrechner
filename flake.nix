@@ -46,6 +46,7 @@
       home-manager.nixosModules.home-manager
       {
         home-manager.useGlobalPkgs = true;
+        home-manager.backupFileExtension = "backup";
         home-manager.users.mrobohm = homeConfig { isMinimal = isMinimal; };
       }
     ];

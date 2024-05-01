@@ -131,15 +131,14 @@ addEWMHFullscreen   = do
 -- Key bindings. Add, modify or remove key bindings here.
 --
 clipboardy :: MonadIO m => m () -- Don't question it 
-clipboardy = spawn "rofi -modi \"\63053 :greenclip print\" -show \"\63053 \" -run-command '{cmd}' -theme ~/.config/rofi/launcher/style.rasi"
+clipboardy = spawn "rofi -modi \"\63053 :greenclip print\" -show \"\63053 \" -run-command '{cmd}'"
 
-centerlaunch = spawn "exec ~/bin/eww open-many blur_full weather profile quote search_full disturb-icon vpn-icon home_dir screenshot power_full reboot_full lock_full logout_full suspend_full"
 sidebarlaunch = spawn "exec ~/bin/eww open-many weather_side time_side smol_calendar player_side sys_side sliders_side"
 ewwclose = spawn "exec ~/bin/eww close-all"
 flameshot = spawn "flameshot gui"
 ocr = spawn "flameshot gui -r | tesseract - - | xsel -ib"
-rofi_launcher = spawn "rofi -no-lazy-grab -show drun -modi run,drun,window -theme /etc/nixos/users/mrobohm/programs/rofi/launcher/style -drun-icon-theme \"candy-icons\" "
-
+rofiLauncher = spawn "rofi -no-lazy-grab -show combi -modi combi,drun,window -combi-modes \"window,drun\" -theme /etc/nixos/users/mrobohm/programs/rofi/launcher/style -drun-icon-theme \"candy-icons\""
+rofiCalc = spawn "rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}' | xclip\""
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
@@ -151,8 +150,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_l     ), spawn "betterlockscreen -l")
 
     -- launch rofi and dashboard
-    , ((modm,               xK_o     ), rofi_launcher)
-    , ((modm,               xK_p     ), centerlaunch)
+    , ((modm,               xK_o     ), rofiLauncher)
+    , ((modm,               xK_r     ), rofiCalc)
     , ((modm .|. shiftMask, xK_p     ), ewwclose)
 
     -- launch eww sidebar
@@ -274,15 +273,15 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [((m .|. modm, k), windows $ f i)
         | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
-    ++
+    -- ++
 
     --
     -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
     -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
     --
-    [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
-        , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
+    --[((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
+    --    | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
+    --    , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 
 ------------------------------------------------------------------------
