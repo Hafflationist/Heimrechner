@@ -52,24 +52,6 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  # Configure keymap in X11
-  services.xserver = {
-    #videoDrivers = [ "nvidia" ];
-    displayManager.lightdm = {
-      enable = true;
-      greeters.pantheon.enable = true;
-    };
-    enable = true;
-    xkb.layout = "de";
-    xkb.variant = "";
-    serverFlagsSection = ''
-      Option "StandbyTime" "0"
-      Option "SuspendTime" "0"
-      Option "OffTime" "0"
-      Option "BlankTime" "0"
-    '';
-  };
-
   # Configure console keymap
   console.keyMap = "de";
 
