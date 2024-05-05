@@ -12,6 +12,7 @@
       discord betterdiscordctl tdesktop whatsapp-for-linux
       steam
       thunderbird
+      heroic
 
       # Libreoffice
       libreoffice-qt
