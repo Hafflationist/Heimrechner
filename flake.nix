@@ -15,10 +15,6 @@
       url = "github:Mic92/tex2nix/4b17bc0";
       #inputs.utils.follows = "nixpkgs";
     };
-    taffybar = {
-      url = "github:nixypanda/taffybar";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     weechat-scripts = {
       type = "github";
       owner = "weechat";
