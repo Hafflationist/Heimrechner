@@ -59,10 +59,9 @@ exampleTaffybarConfig =
 myConfig :: SimpleTaffyConfig
 myConfig =
   defaultSimpleTaffyConfig
-    --{ startWidgets = workspaces : map (>>= buildContentsBox) [layout, musicPlayer],
-    { startWidgets = workspaces : map (>>= buildContentsBox) [layout],
+    { startWidgets = powerMenu : workspaces : map (>>= buildContentsBox) [layout],
       centerWidgets = map (>>= buildContentsBox) [windowsW],
-      endWidgets = powerMenu : map (>>= buildContentsBox) [clock, tray],
+      endWidgets = map (>>= buildContentsBox) [clock, tray],
       barPadding = 24,
       barPosition = Top,
       barHeight = ExactSize 48,
@@ -87,7 +86,7 @@ cc :: ClockConfig
 cc = 
     defaultClockConfig {
         clockFormatString = "%  %Y-%m-%d %H:%M:%S  ",
-	clockUpdateStrategy = ConstantInterval 0.2
+	      clockUpdateStrategy = ConstantInterval 0.2
     }
 
 
@@ -108,8 +107,7 @@ myLayoutConfig =
       layoutDisplay "Spacing GridRatio 0.5625" = "▚▚▚"
       layoutDisplay x = x
    in LayoutConfig
-        { formatLayout = return . layoutDisplay
-        }
+        { formatLayout = return . layoutDisplay }
 
 layout :: TaffyIO Widget
 layout = layoutNew myLayoutConfig
@@ -121,7 +119,7 @@ tray :: TaffyIO Widget
 tray = sniTrayNew
 
 powerMenu :: TaffyIO Widget
-powerMenu = commandButton "power-menu" "\61457" powerMenuLauncher
+powerMenu = commandButton "start-menu" "\xf313" powerMenuLauncher
   where
     powerMenuLauncher =
       T.unwords
@@ -134,35 +132,6 @@ powerMenu = commandButton "power-menu" "\61457" powerMenuLauncher
           "topbar-powermenu-reboot",
           "topbar-powermenu-poweroff"
         ]
-
-musicPlayer :: TaffyIO Widget
-musicPlayer = do
-  box <- boxNew OrientationHorizontal 5
-
-  icon <- commandRunnerNew 1 "custom-browsermediacontrol" ["--display", "status-icon"] "⏯"
-  buttonPlay <- buttonNew
-  _ <- containerAdd buttonPlay icon
-  _ <- widgetSetClassGI buttonPlay "music-player-play-btn"
-
-  buttonPrev <- buttonNewWithLabel "玲"
-  buttonNext <- buttonNewWithLabel "怜  "
-
-  song <- commandRunnerNew 1 "custom-browsermediacontrol" ["--display", "song"] "Failed to get name"
-  songButton <- buttonNew
-  _ <- containerAdd songButton song
-
-  _ <- onButtonClicked buttonPrev $ void (spawnCommand (T.unpack "custom-browsermediacontrol --prev"))
-  _ <- onButtonClicked buttonPlay $ void (spawnCommand (T.unpack "custom-browsermediacontrol --playpause"))
-  _ <- onButtonClicked buttonNext $ void (spawnCommand (T.unpack "custom-browsermediacontrol --next"))
-  _ <- onButtonClicked songButton $ void (spawnCommand (T.unpack "eww open-many --toggle topbar-music-bg topbar-music"))
-
-  _ <- containerAdd box buttonPrev
-  _ <- containerAdd box buttonPlay
-  _ <- containerAdd box buttonNext
-  _ <- containerAdd box songButton
-
-  _ <- widgetSetClassGI box "music-player"
-  toWidget box
 
 commandButton :: T.Text -> T.Text -> T.Text -> TaffyIO Widget
 commandButton className label cmd = do
