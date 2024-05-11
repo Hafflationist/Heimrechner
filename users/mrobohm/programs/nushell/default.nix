@@ -9,10 +9,12 @@
       extraConfig = ''
        '';
       shellAliases = {
-        recompile = "sudo nixos-rebuild switch";
-        rebuild = "sudo nixos-rebuild switch --flake '/etc/nixos#heimrechner'";
+        rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#heimrechner";
+        r = "sudo nixos-rebuild switch --flake /etc/nixos#heimrechner";
         conf = "cd /etc/nixos";
         schnitt = "cd /mnt/schnitt";
+        ls = "ls -al";
+        l = "ls -al";
       };
     };  
     carapace.enable = true;

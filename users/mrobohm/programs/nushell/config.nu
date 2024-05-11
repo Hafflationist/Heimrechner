@@ -762,3 +762,18 @@ $env.config = {
 }
 
 $env.SSH_ASKPASS = ""
+
+def la [] {
+    ls -al | sort-by modified
+}
+
+def lfcd [arg?] {
+    let last_dir = (
+        if ($arg == null) {
+            lf '-print-last-dir'
+        } else {
+            lf '-print-last-dir' $arg
+        }
+    )
+    cd $last_dir
+}

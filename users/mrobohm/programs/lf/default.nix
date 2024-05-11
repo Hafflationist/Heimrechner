@@ -35,7 +35,7 @@
 
       ee = "editor-open";
       V = ''$${pkgs.bat}/bin/bat --paging=always --theme=gruvbox "$f"'';
-
+      S = ''$${pkgs.nushell/bin/nushell}'';
     };
 
     settings = {
