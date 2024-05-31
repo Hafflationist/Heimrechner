@@ -97,11 +97,6 @@
     #  thunderbird
     ];
   };
-  #home-manager.users.mrobohm = { pkgs, ...}: {
-  #  programs.bash.enable = true;
-  #  programs.zsh.enable = true;
-  #  imports = [ ./users/mrobohm/home.nix ];
-  #};
 
   hardware.opengl.enable = true;
   hardware.opengl.driSupport32Bit = true;
