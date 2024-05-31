@@ -39,6 +39,7 @@
       nix-output-monitor
       glxinfo
       cowsay
+      bat
 
       # Entwicklung
       #unstable.jetbrains.idea-community maven unstable.jdk gcc12
