@@ -106,11 +106,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1714536637,
-        "narHash": "sha256-tJ6+1ehuZC8DU2RbUKYnsKLH0koy1673EjTyA4If3uY=",
+        "lastModified": 1719979882,
+        "narHash": "sha256-o1XodzqgpcEJspBteoDUgGbHjg3jjLivX6liuQHpGqU=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "fa69c1a8cbb416f93fb9edbaa6f2bf289cecda96",
+        "rev": "139083d1bc47ac8fbd3c4f82f1b324fb423a343b",
         "type": "github"
       },
       "original": {
@@ -122,11 +122,11 @@
     "weechat-scripts": {
       "flake": false,
       "locked": {
-        "lastModified": 1708286203,
-        "narHash": "sha256-j1aYCUMLVHo7lwNnm2DDdwkZSLckzZTECoiBsqRoGy8=",
+        "lastModified": 1717917568,
+        "narHash": "sha256-CD1J5KhvQUqS7BZ9LbK6jP/Fy/mqTOj3I572yjQcYgQ=",
         "owner": "weechat",
         "repo": "scripts",
-        "rev": "2db7f4a7eccee2efe114c3089593279faee3d79a",
+        "rev": "f27e2c020f7f6b457a9a8fd21a41e8eca4de71a5",
         "type": "github"
       },
       "original": {
