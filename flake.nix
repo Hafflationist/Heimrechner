@@ -19,7 +19,10 @@
     };
     neovim-flocke = {
       url = "github:Hafflationist/neovim-flocke";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # Die Neovimflocke ist noch nicht bereit für die aktuelle Version. 
+      # Aktuell hängt sie noch hinterher
+      # Stand 2024-07-05 geht die Neovimflocke mit ner aktuellen Version kaputt.
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

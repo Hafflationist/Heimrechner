@@ -42,7 +42,7 @@
       bat
 
       # Entwicklung
-      #unstable.jetbrains.idea-community maven unstable.jdk gcc12
+      #unstable.jetbrains.idea-community maven
       jetbrains.idea-community maven gcc12
       cabal-install stack haskell-language-server
       lua-language-server
