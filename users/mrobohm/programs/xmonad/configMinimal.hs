@@ -138,7 +138,7 @@ ewwclose = spawn "exec ~/bin/eww close-all"
 flameshot = spawn "flameshot gui"
 ocr = spawn "flameshot gui -r | tesseract - - | xsel -ib"
 rofiLauncher = spawn "rofi -no-lazy-grab -show combi -modi combi,drun,window -combi-modes \"window,drun\" -theme /etc/nixos/users/mrobohm/programs/rofi/launcher/style -drun-icon-theme \"candy-icons\""
-rofiCalc = spawn " rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}' | xclip\""
+rofiCalc = spawn " rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}' | xclip -selection clipboard\""
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
