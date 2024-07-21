@@ -131,7 +131,7 @@ addEWMHFullscreen   = do
 -- Key bindings. Add, modify or remove key bindings here.
 --
 clipboardy :: MonadIO m => m () -- Don't question it 
-clipboardy = spawn "rofi -modi \"\63053 :greenclip print\" -show \"\63053 \" -run-command '{cmd}'"
+clipboardy = spawn "rofi -modi \"Zwischenablage:greenclip print\" -show \"Zwischenablage\""
 
 sidebarlaunch = spawn "exec ~/bin/eww open-many weather_side time_side smol_calendar player_side sys_side sliders_side"
 ewwclose = spawn "exec ~/bin/eww close-all"
@@ -178,10 +178,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,                 xK_t), ocr)
 
     -- My Stuff
+    , ((modm,               xK_v     ), clipboardy)
     , ((modm,               xK_b     ), spawn "exec ~/bin/bartoggle")
     , ((modm,               xK_z     ), spawn "exec ~/bin/inhibit_activate")
     , ((modm .|. shiftMask, xK_z     ), spawn "exec ~/bin/inhibit_deactivate")
-    , ((modm .|. shiftMask, xK_a     ), clipboardy)
     -- Turn do not disturb on and off
     , ((modm,               xK_d     ), spawn "exec ~/bin/do_not_disturb.sh")
 
@@ -388,7 +388,7 @@ myStartupHook = do
   spawn "custom-panel-launch"
   spawnOnce "setxkbmap de"
   --spawnOnce "picom --experimental-backends"
-  --spawnOnce "greenclip daemon"
+  spawnOnce "greenclip daemon"
   --spawnOnce "dunst"
   --spawnOnce "bash ~/bin/polybarstart.sh"
 
