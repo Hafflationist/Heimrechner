@@ -8,7 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./wm/xmonad.nix
+      # ./wm/xmonad.nix
+      ./wm/hyprland.nix
     ];
 
   # Bootloader.
@@ -157,6 +158,9 @@
   fonts.packages = with pkgs; [
     fira-code
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
+  ];
+  nixpkgs.config.permittedInsecurePackages = [
+    "olm-3.2.16"
   ];
 
   # This value determines the NixOS release from which the default

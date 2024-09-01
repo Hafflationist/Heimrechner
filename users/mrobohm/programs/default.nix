@@ -19,7 +19,9 @@ let
   xmonadFunc = import ./xmonad;
 in
 [
+  ./eww
   ./git
+  ./hyprland
   ./java
   ./kitty
   ./lf
@@ -31,8 +33,9 @@ in
   ./ranger
   ./rofi
   ./taffybar
+  ./waybar
   ./weechat
-  (xmonadFunc { isMinimal = isMinimal; })
+  # (xmonadFunc { isMinimal = isMinimal; })
   ./zathura
   ./zsh
   #more

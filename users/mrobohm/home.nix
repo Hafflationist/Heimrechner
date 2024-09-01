@@ -57,6 +57,7 @@
       lutris wineWowPackages.stable r2modman
       mattermost
       vieb
+      mindustry
     ];
     xdg.mimeApps.enable = true;
     xdg.mimeApps.defaultApplications = {

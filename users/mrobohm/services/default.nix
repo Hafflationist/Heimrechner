@@ -1,5 +1,6 @@
 { isMinimal }:
 if isMinimal then [
 ] else [
-  ./picom
+  # ./picom
+  ./hyprpaper
 ]

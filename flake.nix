@@ -24,6 +24,7 @@
       # Stand 2024-07-05 geht die Neovimflocke mit ner aktuellen Version kaputt.
       #inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
 
   outputs = { nixpkgs, home-manager, ... } @ inputs:
@@ -36,6 +37,7 @@
       #inputs.spicetify-nix.nixosModules.default
       home-manager.nixosModules.home-manager
       {
+        home-manager.extraSpecialArgs = { inherit inputs; };
         home-manager.useGlobalPkgs = true;
         home-manager.backupFileExtension = "backup";
         home-manager.users.mrobohm = homeConfig { isMinimal = isMinimal; };
