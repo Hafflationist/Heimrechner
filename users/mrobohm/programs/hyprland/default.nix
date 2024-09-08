@@ -1,12 +1,15 @@
 { pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    hyprshot
+  ];
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       general = {
-        gaps_out = "20,20,20,20";
-        gaps_in = "20";
+        gaps_out = "16";
+        gaps_in = "16";
       };
       decoration = {
         rounding = 32;
@@ -20,7 +23,7 @@
         "float, class:(Rofi)"
         "stayfocused, class:(Rofi)"
         "bordersize 0, class:(Rofi)"
-
+        "dimaround 1, class:(Rofi)"
       ];
       layerrule = [
         "blur,waybar"
@@ -43,6 +46,7 @@
           "$mod SHIFT, L, movewindow, r"
           "$mod, RETURN, exec, kitty"
           "$mod, F, fullscreen"
+          "$mod, P, exec, hyprshot -m region"
         ]
         ++ (
           # workspaces
