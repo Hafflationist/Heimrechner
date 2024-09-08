@@ -13,15 +13,33 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot = {
 
-  boot.initrd.systemd.enable = true;
-  #boot.plymouth.enable = true;
-  #boot.plymouth.theme = "bgrt";
-  #boot.kernelParams = [ "quit" ];
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    loader.efi.efiSysMountPoint = "/boot/efi";
+    supportedFilesystems = [ "ntfs" ];
+
+    # Der ganz Plymout-Kram funktioniert nicht
+    # Die folgenden Zeilen sollen für Plymouth sein:
+    initrd.enable = true;
+    initrd.verbose = false;
+    initrd.systemd.enable = true;
+    plymouth = {
+      enable = true;
+      themePackages = [ pkgs.nixos-bgrt-plymouth ];
+      theme = "bgrt";
+    };
+    kernelParams = [
+      "quiet"
+      "splash"
+      # "vga=current"
+      # "rd.systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+    ];
+    consoleLogLevel = 0;
+  };
 
   systemd.services.NetworkManager-wait-online.enable = false;
 
