@@ -11,7 +11,7 @@
       GTK = {
         application_prefer_dark_theme = true;
         # cursor_theme_name = "oreo_custom_cursors";
-        theme_name = "Sweet-Dark";
+        # theme_name = "Sweet-Dark";
       };
       appearance.greeting_msg = "WichsOS";
       background = {

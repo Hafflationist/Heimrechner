@@ -19,7 +19,7 @@ let
   xmonadFunc = import ./xmonad;
 in
 [
-  ./eww
+  # ./eww
   ./git
   ./hyprland
   ./java
