@@ -2,6 +2,7 @@
   description = "NixOS-Heimrechner";
 
   inputs = {
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -27,7 +28,7 @@
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
 
-  outputs = { nixpkgs, home-manager, ... } @ inputs:
+  outputs = { nixpkgs, nixpkgs-stable, home-manager, ... } @ inputs:
   let
     system = "x86_64-linux";
     homeConfig = import ./users/mrobohm/home.nix;
@@ -37,7 +38,13 @@
       #inputs.spicetify-nix.nixosModules.default
       home-manager.nixosModules.home-manager
       {
-        home-manager.extraSpecialArgs = { inherit inputs; };
+        home-manager.extraSpecialArgs = { 
+          inherit inputs;
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
         home-manager.useGlobalPkgs = true;
         home-manager.backupFileExtension = "backup";
         home-manager.users.mrobohm = homeConfig { isMinimal = isMinimal; };
@@ -45,6 +52,7 @@
     ];
   in 
   {
+    # Falls mal eine Home-Output generiert werden soll: https://www.reddit.com/r/NixOS/comments/1c6m5j4/how_to_use_both_stable_and_unstable_nixpkgs_in_a/
     nixosConfigurations = {
       heimrechner = nixpkgs.lib.nixosSystem {
         inherit system;

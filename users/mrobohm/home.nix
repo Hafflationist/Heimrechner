@@ -1,5 +1,5 @@
 { isMinimal }:
-{ pkgs, inputs, ... }:
+{ pkgs, pkgs-stable, inputs, ... }:
 {
     home.username = "mrobohm";
     #home.homeDirectory = /home/mrobohm;
@@ -9,7 +9,7 @@
       brave
 
       # Normalfag-Programme
-      discord betterdiscordctl tdesktop whatsapp-for-linux
+      pkgs-stable.discord betterdiscordctl tdesktop whatsapp-for-linux
       steam
       thunderbird
       heroic
