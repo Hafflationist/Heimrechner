@@ -3,6 +3,8 @@
 {
   home.packages = with pkgs; [
     hyprshot
+    wl-clipboard
+    tesseract
   ];
   wayland.windowManager.hyprland = {
     enable = true;
@@ -35,6 +37,9 @@
       bind =
         [
           "$mod, O, exec, rofi -no-lazy-grab -show combi -modi combi,drun,window -combi-modes \"window,drun\" -theme /etc/nixos/users/mrobohm/programs/rofi/launcher/style -drun-icon-theme \"candy-icons\""
+          "$mod, V, exec, rofi -modi \"Zwischenablage:greenclip print\" -show \"Zwischenablage\""
+          "$mod, R, exec, rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}' | wl-copy\""
+          "$mod, T, exec, hyprshot --raw -m region | tesseract - - | wl-copy"
           "$mod, Q, killactive"
           "$mod, H, movefocus, l"
           "$mod, J, movefocus, d"
