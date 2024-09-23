@@ -71,6 +71,9 @@
             10)
         );
       exec = [ "hyprpaper" "waybar" ];
+      exec-once = [
+        "hyprctl setcursor graphite-dark 24"
+      ];
     };
     extraConfig = ''
         general {

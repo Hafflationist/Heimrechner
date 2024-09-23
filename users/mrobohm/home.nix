@@ -59,6 +59,13 @@
       vieb
       mindustry
     ];
+    home.pointerCursor = {
+      gtk.enable = true;
+      x11.enable = true;
+      package = pkgs.graphite-cursors;
+      name = "graphite-dark";
+      size = 24;
+    };
     xdg.mimeApps.enable = true;
     xdg.mimeApps.defaultApplications = {
       "x-scheme-handler/http" = "librewolf.desktop";
