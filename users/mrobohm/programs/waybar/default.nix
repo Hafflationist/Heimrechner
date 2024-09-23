@@ -14,7 +14,7 @@
     style = ''
 
       window#waybar {
-        background: transparent;
+        background: rgba(13, 13, 27, 0.03125);
         border-bottom: none;
         border-radius: 32px;
       }

@@ -29,6 +29,7 @@
       ];
       layerrule = [
         "blur,waybar"
+        "ignorezero,waybar"
       ];
       "$mod" = "SUPER";
       input = {
