@@ -29,6 +29,10 @@
       ];
       layerrule = [
         "blur,waybar"
+        "blur,swaync-control-center"
+        "blur,swaync-notification-window"
+        "ignorezero,swaync-notification-window"
+        "ignorealpha 0.09,swaync-notification-window"
         "ignorezero,waybar"
       ];
       "$mod" = "SUPER";
@@ -50,9 +54,11 @@
           "$mod SHIFT, J, movewindow, d"
           "$mod SHIFT, K, movewindow, u"
           "$mod SHIFT, L, movewindow, r"
+          "$mod, mouse:272, movewindow"
           "$mod, RETURN, exec, kitty"
           "$mod, F, fullscreen"
           "$mod, P, exec, hyprshot -m region"
+          "$mod, N, exec, swaync-client -t"
         ]
         ++ (
           # workspaces
