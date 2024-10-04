@@ -1,8 +1,18 @@
 { pkgs, ... }:
 
+let german-hyprshot = pkgs.hyprshot.overrideAttrs (prev: {
+
+      src = pkgs.fetchFromGitHub {
+          owner = "Hafflationist";
+          repo = "hyprshot";
+          rev = "10f057106c19dcf32a53fcd498517446ef800a81";
+          hash = "sha256-Q9a5AHJawsF8vP7xMzVjA2K/N8Y+3svI/VDE1AaFxv4=";
+        };
+    });
+in
 {
   home.packages = with pkgs; [
-    hyprshot
+    german-hyprshot
     wl-clipboard
     tesseract
   ];
