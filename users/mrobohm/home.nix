@@ -9,7 +9,7 @@
       brave
 
       # Normalfag-Programme
-      discord betterdiscordctl tdesktop whatsapp-for-linux
+      tdesktop whatsapp-for-linux
       steam
       thunderbird
       heroic

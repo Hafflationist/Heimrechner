@@ -20,6 +20,7 @@ let
 in
 [
   # ./eww
+  ./discord
   ./git
   ./hyprland
   ./java
