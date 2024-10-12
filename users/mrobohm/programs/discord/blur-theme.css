@@ -14,8 +14,8 @@
   --accent-text-color: #000;
   /*	-	*/
 
-  --sidebar-color: rgba(0, 0, 0, 0.4);
-  --main-content-color: rgba(0, 0, 0, 0.2);
+  --sidebar-color: rgba(0, 0, 0, 0.2);
+  --main-content-color: rgba(0, 0, 0, 0.0);
   /*	-	*/
 
   --message-color: rgba(0, 0, 0, 0);
@@ -38,9 +38,9 @@
   --textarea-radius: 22px;
   /*	-	*/
 
-  --card-color: rgba(0, 0, 0, 0.4);
-  --card-color-hover: rgba(0, 0, 0, 0.5);
-  --card-color-select: rgba(0, 0, 0, 0.7);
+  --card-color: rgba(0, 0, 0, 0.2);
+  --card-color-hover: rgba(0, 0, 0, 0.3);
+  --card-color-select: rgba(0, 0, 0, 0.6);
   /*	-	*/
 
   --button-height: 32px;
@@ -77,7 +77,7 @@
 
 .reaction-3vwAF2,
 .reaction-102jx9 {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.0);
   border-radius: var(--message-radius);
   border: none;
 }
@@ -94,12 +94,12 @@
 .attachment-1PZZB2,
 [class*=theme-] .tile-2mmK5T,
 [class*=theme-] .tile-2mmK5T:hover {
-  background-color: rgba(39, 39, 39, 0.4);
+  background-color: rgba(39, 39, 39, 0.2);
   border-radius: 6px;
 }
 
 .mentioned-Tre-dv {
-  --message-color: hsla(var(--mention-hsl), 0.2);
+  --message-color: hsla(var(--mention-hsl), 0.0);
 }
 
 .mentioned-Tre-dv,
@@ -156,3 +156,4 @@
 .giftCodeContainer__7fa01 {
   opacity: 0.8;
 }
+
