@@ -25,10 +25,10 @@ in
       };
       decoration = {
         rounding = 32;
-        shadow_range = 8;
+        drop_shadow = false;
         blur = {
           size = 16;
-          passes = 2;
+          passes = 3;
         };
       };
       windowrulev2 = [
@@ -49,6 +49,9 @@ in
       input = {
         kb_layout = "de";
       };
+      bindm = [
+          "$mod, mouse:272, movewindow"
+      ];
       bind =
         [
           "$mod, O, exec, rofi -no-lazy-grab -show combi -modi combi,drun,window -combi-modes \"window,drun\" -theme /etc/nixos/users/mrobohm/programs/rofi/launcher/style -drun-icon-theme \"candy-icons\""
@@ -64,9 +67,9 @@ in
           "$mod SHIFT, J, movewindow, d"
           "$mod SHIFT, K, movewindow, u"
           "$mod SHIFT, L, movewindow, r"
-          "$mod, mouse:272, movewindow"
           "$mod, RETURN, exec, kitty"
           "$mod, F, fullscreen"
+          "$mod SHIFT, F, togglefloating"
           "$mod, P, exec, hyprshot -m region"
           "$mod, N, exec, swaync-client -t"
         ]
@@ -90,6 +93,11 @@ in
       exec-once = [
         "hyprctl setcursor graphite-dark 24"
       ];
+      plugins = {
+        hyprtrails = {
+          color = "#80c50ed2";
+        };
+      };
     };
     extraConfig = ''
         general {
