@@ -49,6 +49,7 @@
       nil
       mycli
       ghc # wird auch von neovim benötigt
+      dotnet-sdk
 
       # Sonstiges
       tree element-desktop _2048-in-terminal
