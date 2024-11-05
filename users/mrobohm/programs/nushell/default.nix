@@ -15,6 +15,10 @@
         schnitt = "cd /mnt/schnitt";
         ls = "ls -al";
         l = "ls -al";
+        ruhe = "systemctl suspend";
+        herunterfahren = "shutdown now";
+        herunter = "shutdown now";
+        neustart = "reboot";
       };
     };  
     carapace.enable = true;
