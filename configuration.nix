@@ -175,7 +175,7 @@
 
   fonts.packages = with pkgs; [
     fira-code
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    nerd-fonts.fira-code
   ];
   nixpkgs.config.permittedInsecurePackages = [
     "olm-3.2.16"
