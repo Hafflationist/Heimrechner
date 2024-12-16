@@ -21,7 +21,6 @@
 
       # Desktopumgebung
       masterpdfeditor
-      libsForQt5.dolphin
       killall bitwarden
       feh viu
       flameshot
