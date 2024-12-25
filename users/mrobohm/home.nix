@@ -58,6 +58,7 @@
       mattermost
       vieb
       mindustry
+      uhk-agent polkit
     ];
     home.pointerCursor = {
       gtk.enable = true;
