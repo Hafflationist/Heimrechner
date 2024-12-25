@@ -19,6 +19,8 @@
         herunterfahren = "shutdown now";
         herunter = "shutdown now";
         neustart = "reboot";
+        gs = "git status";
+        gd = "git diff";
       };
     };  
     carapace.enable = true;
