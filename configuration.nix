@@ -136,6 +136,7 @@
     gitAndTools.gitFull
     #plymouth
     nixos-bgrt-plymouth
+    samba cifs-utils # notwendig für Fritz!NAS
   ];
 
    virtualisation.containers.enable = true;
