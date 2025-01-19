@@ -1,0 +1,29 @@
+i@-moz-document domain("github.com") {
+
+:root {
+
+--bgColor-default: transparent !important;
+
+--bgColor-inset: transparent !important;
+
+--bgColor-muted: rgba(160, 160, 171, 0.3) !important;
+
+--borderColor-default: rgba(160, 160, 171, 0.3) !important;
+
+--borderColor-muted: rgba(160, 160, 171, 0.3) !important;
+
+}
+
+.color-bg-subtle {
+
+background-color: transparent !important;
+
+}
+
+.input-contrast {
+
+background-color: transparent !important;
+
+}
+
+} 

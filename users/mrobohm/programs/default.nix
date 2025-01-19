@@ -21,6 +21,7 @@ in
 [
   # ./eww
   ./discord
+  ./firefox
   ./git
   ./hyprland
   ./java

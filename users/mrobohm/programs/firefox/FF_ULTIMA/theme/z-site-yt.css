@@ -1,0 +1,9 @@
+@-moz-document regexp("^https?://(www\\.)?youtube\\..*") {
+  :root {
+    background-color: transparent !important;
+  }
+
+  #search {
+    background-color: red !important;
+  }
+}
