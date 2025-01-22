@@ -101,8 +101,8 @@ in
     };
     extraConfig = ''
         general {
-          col.inactive_border = 0x00000000;
-          col.active_border = 0x80ffffff;
+          col.inactive_border = rgba(40404040) rgba(40404040)
+          col.active_border = rgba(ffffff80) rgba(ffffff80)
         }
         monitor = eDP-1, preferred, auto, 1
         monitor = , preferred, auto, 1

@@ -46,7 +46,7 @@
           };
         };
         home-manager.useGlobalPkgs = true;
-        home-manager.backupFileExtension = "backup";
+        home-manager.backupFileExtension = "bac";
         home-manager.users.mrobohm = homeConfig { isMinimal = isMinimal; };
       }
     ];
