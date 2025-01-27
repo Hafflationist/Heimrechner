@@ -41,6 +41,8 @@
     consoleLogLevel = 0;
   };
 
+  services.hardware.openrgb.enable = true;
+
   systemd.services.NetworkManager-wait-online.enable = false;
 
   networking.hostName = "nixos"; # Define your hostname.
