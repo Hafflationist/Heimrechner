@@ -1,7 +1,28 @@
 
-{ lib, pkgs, inputs, ... }:
+{ lib, pkgs, inputs, config, ... }:
 
 {
+  services.xserver = {
+    enable = true;
+    desktopManager.gnome.enable = true;
+  };
+  environment.gnome.excludePackages = (with pkgs; [
+    atomix # puzzle game
+    cheese # webcam tool
+    epiphany # web browser
+    evince # document viewer
+    geary # email reader
+    gedit # text editor
+    gnome-characters
+    gnome-music
+    gnome-photos
+    gnome-terminal
+    gnome-tour
+    hitori # sudoku game
+    iagno # go game
+    tali # poker game
+    totem # video player
+  ]);
   programs.hyprland.enable = true;
   programs.hyprland.xwayland.enable = true;
   programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
