@@ -130,13 +130,16 @@
       }
     '';
     settings = [{
-      height = 48;
+      height = 69;
       layer = "top";
       position = "top";
       margin = "16";
       tray = { spacing = 10; };
+      modules-left = [
+        "custom/nixos-logo"
+        "hyprland/workspaces"
+      ];
       modules-center = [ "hyprland/window" ];
-      modules-left = [ "hyprland/workspaces" ];
       modules-right = [
         "pulseaudio"
         "network"
@@ -146,6 +149,9 @@
         "clock"
         "tray"
       ];
+      "custom/nixos-logo" = {
+        format = "<span foreground=\"violet\" size=\"x-large\">  </span>";
+      };
       "hyprland/workspaces" = { 
         persistent-workspaces = {
           "*" = 5;
@@ -173,20 +179,32 @@
         interval = 1;
       };
       cpu = {
-        format = "{usage}% ";
+        interval = 1;
+        # format = "{usage}% ";
+        format = "{icon}  ";
+        format-icons = [
+          "<span foreground=\"#00FF00\">▁</span>"
+          "<span foreground=\"#22DD00\">▂</span>"
+          "<span foreground=\"#44BB00\">▃</span>"
+          "<span foreground=\"#779900\">▄</span>"
+          "<span foreground=\"#997700\">▅</span>"
+          "<span foreground=\"#BB4400\">▆</span>"
+          "<span foreground=\"#DD2200\">▇</span>"
+          "<span foreground=\"#FF0000\">█</span>"
+        ];
         tooltip = false;
       };
-      memory = { format = "{}% "; };
+      memory = { format = "{}%  "; };
       network = {
         interval = 1;
         format-alt = "{ifname}: {ipaddr}/{cidr}";
-        format-disconnected = "Disconnected ⚠";
-        format-ethernet = "{ifname}: {ipaddr}/{cidr}   up: {bandwidthUpBits} down: {bandwidthDownBits}";
+        format-disconnected = "Keine Verbindung ⚠";
+        format-ethernet = "{ipaddr} 󰈀  {bandwidthUpBits}   {bandwidthDownBits}  ";
         format-linked = "{ifname} (No IP) ";
         format-wifi = "{essid} ({signalStrength}%) ";
       };
       pulseaudio = {
-        format = "{volume}% {icon} {format_source}";
+        format = "{volume}% {icon}  {format_source}";
         format-bluetooth = "{volume}% {icon} {format_source}";
         format-bluetooth-muted = " {icon} {format_source}";
         format-icons = {
@@ -204,6 +222,7 @@
         on-click = "pavucontrol";
       };
       temperature = {
+        hwmon-path = "/sys/devices/pci0000:00/0000:00:03.1/0000:06:00.0/0000:07:00.0/0000:08:00.0/hwmon/hwmon4/temp1_input";
         critical-threshold = 80;
         format = "{temperatureC}°C {icon}";
         format-icons = [ "" "" "" ];
