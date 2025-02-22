@@ -93,6 +93,11 @@ in
       exec-once = [
         "hyprctl setcursor graphite-dark 24"
       ];
+      misc = {
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+        disable_hyprland_qtutils_check = true;
+      };
       plugins = {
         hyprtrails = {
           color = "#80c50ed2";

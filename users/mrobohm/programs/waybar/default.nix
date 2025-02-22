@@ -147,9 +147,24 @@
         "tray"
       ];
       "hyprland/workspaces" = { 
-        active-only = false;
         persistent-workspaces = {
           "*" = 5;
+        };
+        active-only = false;
+        format = "{id} {windows}";
+        format-window-separator = " ";
+        window-rewrite-default = "";
+        window-rewrite = {
+          "title<.*vim>" = "";
+          "class<Spotify>" = "";
+          "class<kitty>" = "";
+          "class<librewolf>" = "";
+          "class<discord>" = "";
+          "class<.*telegram.*>" = "";
+          "class<steam>" = "󰓓";
+          "class<thunderbird>" = "";
+          "class<Bitwarden>" = "󰟵";
+          "class<libreoffice.*>" = "󰦑";
         };
       };
       clock = {
