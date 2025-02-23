@@ -37,7 +37,7 @@ in
   ./taffybar
   ./waybar
   ./weechat
-  # (xmonadFunc { isMinimal = isMinimal; })
+  (xmonadFunc { isMinimal = isMinimal; })
   ./zathura
   ./zsh
   #more

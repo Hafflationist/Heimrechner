@@ -2,10 +2,19 @@
 { lib, pkgs, inputs, config, ... }:
 
 {
+  services.xserver.displayManager.startx.enable = true;
   services.xserver = {
     enable = true;
     desktopManager.gnome.enable = true;
+    windowManager.xmonad = {
+      enable = true;
+      enableContribAndExtras = true;
+    };
   };
+  environment.systemPackages = [
+    pkgs.gnomeExtensions.blur-my-shell
+    pkgs.gnomeExtensions.tiling-shell
+  ];
   environment.gnome.excludePackages = (with pkgs; [
     atomix # puzzle game
     cheese # webcam tool
