@@ -84,35 +84,37 @@
         background: rgba(13, 13, 27, 0.25);
       }
 
-      #temperature {
+      #memory {
         margin-top: 8px;
         margin-left: 8px;
+        margin-right: 0px;
         margin-bottom: 8px;
         padding-left: 16px;
         padding-right: 16px;
-        border-radius: 26px;
+        border-radius: 26px 0px 0px 26px;
         transition: none;
         background: rgba(13, 13, 27, 0.25);
       }
 
       #cpu {
         margin-top: 8px;
-        margin-left: 8px;
+        margin-left: 2px;
+        margin-right: 2px;
         margin-bottom: 8px;
         padding-left: 16px;
         padding-right: 16px;
-        border-radius: 26px;
+        border-radius: 0px;
         transition: none;
         background: rgba(13, 13, 27, 0.25);
       }
 
-      #memory {
+      #temperature {
         margin-top: 8px;
-        margin-left: 8px;
+        margin-left: 0px;
         margin-bottom: 8px;
         padding-left: 16px;
         padding-right: 16px;
-        border-radius: 26px;
+        border-radius: 0px 26px 26px 0px;
         transition: none;
         background: rgba(13, 13, 27, 0.25);
       }
@@ -121,11 +123,27 @@
         margin-top: 8px;
         margin-left: 8px;
         margin-bottom: 8px;
-        margin-right: 12px;
+        margin-right: 8px;
         padding-left: 16px;
         padding-right: 16px;
         border-radius: 26px;
         transition: none;
+        background: rgba(13, 13, 27, 0.25);
+      }
+
+      #tray {
+        margin-top: 8px;
+        margin-left: 8px;
+        margin-right: 0px;
+        margin-bottom: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+        border-radius: 26px;
+        transition: none;
+        background: rgba(13, 13, 27, 0.25);
+      }
+
+      #tray menu {
         background: rgba(13, 13, 27, 0.25);
       }
     '';
@@ -143,8 +161,8 @@
       modules-right = [
         "pulseaudio"
         "network"
-        "cpu"
         "memory"
+        "cpu"
         "temperature"
         "clock"
         "tray"
