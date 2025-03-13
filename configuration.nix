@@ -112,7 +112,6 @@
     extraGroups = [ "networkmanager" "wheel" "virtualbox" ];
     packages = with pkgs; [
       firefox
-      kate
       inputs.neovim-flocke.packages.${pkgs.system}.neovim
     #  home-manager
     #  thunderbird
