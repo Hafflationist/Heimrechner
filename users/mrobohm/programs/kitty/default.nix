@@ -29,6 +29,7 @@
       color13 = "#f2a297";
       color14 = "#f4436f";
       color15 = "#ebdbb2";
+      cursor_trail = 3;
     };
   };
 }
