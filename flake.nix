@@ -26,6 +26,7 @@
       #inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = { nixpkgs, nixpkgs-stable, home-manager, ... } @ inputs:
@@ -46,9 +47,10 @@
           };
         };
         home-manager.useGlobalPkgs = true;
-        home-manager.backupFileExtension = "bac";
+        home-manager.backupFileExtension = "backup5";
         home-manager.users.mrobohm = homeConfig { isMinimal = isMinimal; };
       }
+      inputs.stylix.nixosModules.stylix
     ];
   in 
   {

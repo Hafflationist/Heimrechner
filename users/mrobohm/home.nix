@@ -60,13 +60,14 @@
       mindustry
       uhk-agent polkit
     ];
-    home.pointerCursor = {
-      gtk.enable = true;
-      x11.enable = true;
-      package = pkgs.graphite-cursors;
-      name = "graphite-dark";
-      size = 24;
-    };
+    stylix.targets.alacritty.enable = true;
+    # home.pointerCursor = {
+    #   gtk.enable = true;
+    #   x11.enable = true;
+    #   package = pkgs.graphite-cursors;
+    #   name = "graphite-dark";
+    #   size = 24;
+    # };
     xdg.mimeApps.enable = true;
     xdg.mimeApps.defaultApplications = {
       "x-scheme-handler/http" = "librewolf.desktop";
@@ -91,7 +92,7 @@
       enable = true;
     };
     nixpkgs.config.allowUnfree = true;
-    imports = builtins.concatLists (builtins.map (modules: modules { isMinimal = isMinimal; }) (builtins.map import [
+    imports = [ ./stylix ] ++ builtins.concatLists (builtins.map (modules: modules { isMinimal = isMinimal; }) (builtins.map import [
       ./programs
       ./services
       ./misc
