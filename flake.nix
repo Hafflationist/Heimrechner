@@ -47,7 +47,7 @@
           };
         };
         home-manager.useGlobalPkgs = true;
-        home-manager.backupFileExtension = "backup5";
+        home-manager.backupFileExtension = "backup6";
         home-manager.users.mrobohm = homeConfig { isMinimal = isMinimal; };
       }
       inputs.stylix.nixosModules.stylix

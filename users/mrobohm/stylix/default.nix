@@ -9,5 +9,6 @@
       firefox.enable = true;
       alacritty.enable = true;
     };
+    opacity.terminal = 0.25;
   };
 }

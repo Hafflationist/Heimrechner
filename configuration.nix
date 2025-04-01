@@ -1,24 +1,26 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, isMinimal, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./wm/desktop.nix
-      ./stylix.nix
-    ];
+  config,
+  pkgs,
+  inputs,
+  isMinimal,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./wm/desktop.nix
+    ./stylix.nix
+  ];
 
   # Bootloader.
   boot = {
-
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
     loader.efi.efiSysMountPoint = "/boot/efi";
-    supportedFilesystems = [ "ntfs" ];
+    supportedFilesystems = ["ntfs"];
 
     # Der ganz Plymout-Kram funktioniert nicht
     # Die folgenden Zeilen sollen für Plymouth sein:
@@ -27,7 +29,7 @@
     initrd.systemd.enable = true;
     plymouth = {
       enable = true;
-      themePackages = [ pkgs.nixos-bgrt-plymouth ];
+      themePackages = [pkgs.nixos-bgrt-plymouth];
       theme = "bgrt";
     };
     kernelParams = [
@@ -110,12 +112,12 @@
     initialPassword = "hugobert";
     isNormalUser = true;
     description = "Rainer Zufall";
-    extraGroups = [ "networkmanager" "wheel" "virtualbox" ];
+    extraGroups = ["networkmanager" "wheel" "virtualbox"];
     packages = with pkgs; [
       firefox
       inputs.neovim-flocke.packages.${pkgs.system}.neovim
-    #  home-manager
-    #  thunderbird
+      #  home-manager
+      #  thunderbird
     ];
   };
 
@@ -125,7 +127,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.optimise.automatic = true;
 
   # List packages installed in system profile. To search, run:
@@ -138,11 +140,12 @@
     gitAndTools.gitFull
     #plymouth
     nixos-bgrt-plymouth
-    samba cifs-utils # notwendig für Fritz!NAS
+    samba
+    cifs-utils # notwendig für Fritz!NAS
   ];
 
-   virtualisation.containers.enable = true;
-   virtualisation = {
+  virtualisation.containers.enable = true;
+  virtualisation = {
     podman = {
       enable = true;
 
@@ -154,8 +157,8 @@
     };
   };
 
-   virtualisation.virtualbox.host.enable = true;
-   users.extraGroups.vboxusers.members = [ "virtualbox" ];
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = ["virtualbox"];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -192,5 +195,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
-
 }

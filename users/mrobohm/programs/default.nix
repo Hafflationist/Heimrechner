@@ -19,6 +19,7 @@ let
   xmonadFunc = import ./xmonad;
 in
 [
+  ./btop
   # ./eww
   ./discord
   ./firefox

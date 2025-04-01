@@ -34,11 +34,12 @@
       gimp inkscape
 
       # Reiszeug
-      neofetch cbonsai htop btop
+      neofetch cbonsai htop
       nix-output-monitor
       glxinfo
       cowsay
       bat
+      gedit
 
       # Entwicklung
       #unstable.jetbrains.idea-community maven
@@ -91,7 +92,6 @@
     programs.home-manager = {
       enable = true;
     };
-    nixpkgs.config.allowUnfree = true;
     imports = [ ./stylix ] ++ builtins.concatLists (builtins.map (modules: modules { isMinimal = isMinimal; }) (builtins.map import [
       ./programs
       ./services
