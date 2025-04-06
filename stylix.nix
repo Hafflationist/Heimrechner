@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   stylix = {
     enable = true;
     autoEnable = false;
@@ -22,9 +20,11 @@
       base0E = "#f4436f";
       base0F = "#ebdbb2";
     };
-    cursor.size = 24;
-    cursor.package = pkgs.graphite-cursors;
-    cursor.name = "graphite-dark";
+    cursor = {
+      size = 24;
+      package = pkgs.graphite-cursors;
+      name = "graphite-dark";
+    };
     image = ./users/mrobohm/services/hyprpaper/hintergrund.png;
   };
 }
