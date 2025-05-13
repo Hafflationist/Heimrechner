@@ -1,8 +1,6 @@
-{ isMinimal }:
-let
-  more = { pkgs, ... }: {
+{isMinimal}: let
+  more = {pkgs, ...}: {
     programs = {
-
       gpg.enable = true;
 
       htop = {
@@ -17,8 +15,7 @@ let
     };
   };
   xmonadFunc = import ./xmonad;
-in
-[
+in [
   ./btop
   # ./eww
   ./discord
@@ -38,7 +35,7 @@ in
   ./taffybar
   ./waybar
   ./weechat
-  (xmonadFunc { isMinimal = isMinimal; })
+  (xmonadFunc {isMinimal = isMinimal;})
   ./zathura
   ./zsh
   #more
