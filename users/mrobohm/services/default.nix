@@ -1,7 +1,10 @@
-{ isMinimal }:
-if isMinimal then [
-] else [
+{isMinimal}:
+if isMinimal
+then [
+]
+else [
   ./picom
   ./hyprpaper
   ./swaync
+  ./clipse
 ]

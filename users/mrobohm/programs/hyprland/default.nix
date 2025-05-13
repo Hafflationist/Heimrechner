@@ -1,16 +1,13 @@
-{ pkgs, ... }:
-
-let german-hyprshot = pkgs.hyprshot.overrideAttrs (prev: {
-
-      src = pkgs.fetchFromGitHub {
-          owner = "Hafflationist";
-          repo = "hyprshot";
-          rev = "10f057106c19dcf32a53fcd498517446ef800a81";
-          hash = "sha256-Q9a5AHJawsF8vP7xMzVjA2K/N8Y+3svI/VDE1AaFxv4=";
-        };
-    });
-in
-{
+{pkgs, ...}: let
+  german-hyprshot = pkgs.hyprshot.overrideAttrs (prev: {
+    src = pkgs.fetchFromGitHub {
+      owner = "Hafflationist";
+      repo = "hyprshot";
+      rev = "10f057106c19dcf32a53fcd498517446ef800a81";
+      hash = "sha256-Q9a5AHJawsF8vP7xMzVjA2K/N8Y+3svI/VDE1AaFxv4=";
+    };
+  });
+in {
   home.packages = with pkgs; [
     german-hyprshot
     wl-clipboard
@@ -36,6 +33,11 @@ in
         "stayfocused, class:(Rofi)"
         "bordersize 0, class:(Rofi)"
         "dimaround 1, class:(Rofi)"
+        "float, class:(clipse)"
+        "size <50% <50%, class:(clipse)"
+        "stayfocused, class:(clipse)"
+        "bordersize 0, class:(clipse)"
+        "dimaround 1, class:(clipse)"
       ];
       layerrule = [
         "blur,waybar"
@@ -50,12 +52,13 @@ in
         kb_layout = "de";
       };
       bindm = [
-          "$mod, mouse:272, movewindow"
+        "$mod, mouse:272, movewindow"
       ];
       bind =
         [
           "$mod, O, exec, rofi -no-lazy-grab -show combi -modi combi,drun,window -combi-modes \"window,drun\" -theme /etc/nixos/users/mrobohm/programs/rofi/launcher/style -drun-icon-theme \"candy-icons\""
-          "$mod, V, exec, rofi -modi \"Zwischenablage:greenclip print\" -show \"Zwischenablage\""
+          # "$mod, V, exec, rofi -modi \"Zwischenablage:greenclip print\" -show \"Zwischenablage\""
+          "$mod, V, exec, kitty --class clipse -e clipse"
           "$mod, R, exec, rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}' | wl-copy\""
           "$mod, T, exec, hyprshot --raw -m region | tesseract - - | wl-copy"
           "$mod, Q, killactive"
@@ -89,9 +92,10 @@ in
             )
             10)
         );
-      exec = [ "hyprpaper" "waybar" ];
+      exec = ["hyprpaper" "waybar"];
       exec-once = [
         "hyprctl setcursor graphite-dark 24"
+        "clipse -listen"
       ];
       misc = {
         disable_hyprland_logo = true;
@@ -105,12 +109,12 @@ in
       };
     };
     extraConfig = ''
-        general {
-          col.inactive_border = rgba(40404040) rgba(40404040)
-          col.active_border = rgba(ffffff80) rgba(ffffff80)
-        }
-        monitor = eDP-1, preferred, auto, 1
-        monitor = , preferred, auto, 1
+      general {
+        col.inactive_border = rgba(40404040) rgba(40404040)
+        col.active_border = rgba(ffffff80) rgba(ffffff80)
+      }
+      monitor = eDP-1, preferred, auto, 1
+      monitor = , preferred, auto, 1
     '';
   };
 }
