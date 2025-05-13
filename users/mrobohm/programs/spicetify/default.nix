@@ -1,25 +1,24 @@
-
-
-
-
-{ pkgs, lib, inputs, ... }:
-let
-  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-in
 {
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: let
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+in {
   # allow spotify to be installed if you don't have unfree enabled already
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "spotify"
-  ];
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "spotify"
+    ];
 
   # import the flake's module for your system
-  imports = [ inputs.spicetify-nix.nixosModules.default ];
+  imports = [inputs.spicetify-nix.nixosModules.default];
 
   # configure spicetify :)
-  programs.spicetify =
-  {
+  programs.spicetify = {
     enable = true;
-    colorScheme = "Purple";
+    colorScheme = "Ocean";
     #customColorScheme = {
     #  text = "f8f8f8";
     #  subtext = "f8f8f8";
