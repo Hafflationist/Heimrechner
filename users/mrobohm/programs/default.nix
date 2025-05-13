@@ -32,6 +32,7 @@ in [
   ./nushell
   ./ranger
   ./rofi
+  ./superfile
   ./taffybar
   ./waybar
   ./weechat
