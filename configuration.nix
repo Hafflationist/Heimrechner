@@ -83,7 +83,7 @@
   services.greenclip.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -116,6 +116,7 @@
     packages = with pkgs; [
       firefox
       inputs.neovim-flocke.packages.${pkgs.system}.neovim
+      inputs.zen-browser.packages."${system}".default
       #  home-manager
       #  thunderbird
     ];

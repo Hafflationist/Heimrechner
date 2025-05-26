@@ -95,7 +95,6 @@ in {
       exec = ["hyprpaper" "waybar"];
       exec-once = [
         "hyprctl setcursor graphite-dark 24"
-        "clipse -listen"
       ];
       misc = {
         disable_hyprland_logo = true;
