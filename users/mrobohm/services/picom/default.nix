@@ -1,7 +1,6 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   services.status-notifier-watcher.enable = true;
+  systemd.user.services.picom.Unit.ConditionEnvironment = "XDG_SESSION_DESKTOP=xmonad";
   services.picom = {
     enable = true;
     activeOpacity = 0.95;
