@@ -92,7 +92,7 @@ in {
             )
             10)
         );
-      exec = ["hyprpaper" "waybar"];
+      exec = ["waybar"];
       exec-once = [
         "hyprctl setcursor graphite-dark 24"
       ];
