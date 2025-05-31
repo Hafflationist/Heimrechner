@@ -125,9 +125,6 @@
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.optimise.automatic = true;
 
@@ -185,9 +182,14 @@
     fira-code
     nerd-fonts.fira-code
   ];
-  nixpkgs.config.permittedInsecurePackages = [
-    "olm-3.2.16"
-  ];
+
+  nixpkgs.config = {
+    allowUnfree = true;
+    rocmSupport = true;
+    permittedInsecurePackages = [
+      "olm-3.2.16"
+    ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
