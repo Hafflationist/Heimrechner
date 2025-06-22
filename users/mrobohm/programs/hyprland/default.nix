@@ -19,10 +19,13 @@ in {
       general = {
         gaps_out = "16";
         gaps_in = "16";
+        border_size = 4;
       };
       decoration = {
         rounding = 32;
-        # drop_shadow = false;
+        shadow = {
+          enabled = false;
+        };
         blur = {
           size = 16;
           passes = 3;
@@ -109,7 +112,7 @@ in {
     };
     extraConfig = ''
       general {
-        col.inactive_border = rgba(40404040) rgba(40404040)
+        col.inactive_border = rgba(40404000) rgba(40404000)
         col.active_border = rgba(ffffff80) rgba(ffffff80)
       }
       monitor = eDP-1, preferred, auto, 1
