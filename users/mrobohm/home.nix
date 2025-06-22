@@ -13,7 +13,6 @@
 
     # Normalfag-Programme
     tdesktop
-    whatsapp-for-linux
     steam
     thunderbird
     heroic
@@ -29,12 +28,11 @@
     bitwarden
     feh
     viu
-    flameshot
-    xsel # benötigt für ocr
+    # flameshot
+    # xsel # benötigt für ocr
     tesseract # benötigt für ocr
     betterlockscreen
     deadbeef
-    warp-terminal
 
     # Grafikprogramme
     inkscape
@@ -45,10 +43,8 @@
     cbonsai
     htop
     nix-output-monitor
-    glxinfo
     cowsay
     bat
-    gedit
 
     # Entwicklung
     #unstable.jetbrains.idea-community maven
@@ -62,31 +58,23 @@
     nil
     mycli
     ghc # wird auch von neovim benötigt
-    dotnet-sdk
+    # dotnet-sdk
+    cargo
+    rustc
 
     # Sonstiges
     tree
     element-desktop
-    _2048-in-terminal
+    # _2048-in-terminal
     ripgrep # genutzt von Neovim-Telescope
-    openttd
+    # openttd
     lutris
     wineWowPackages.stable
     r2modman
-    mattermost
-    vieb
-    mindustry
     uhk-agent
     polkit
+    keepassxc
   ];
-  stylix.targets.alacritty.enable = true;
-  # home.pointerCursor = {
-  #   gtk.enable = true;
-  #   x11.enable = true;
-  #   package = pkgs.graphite-cursors;
-  #   name = "graphite-dark";
-  #   size = 24;
-  # };
   xdg.mimeApps.enable = true;
   xdg.mimeApps.defaultApplications = {
     "x-scheme-handler/http" = "librewolf.desktop";
