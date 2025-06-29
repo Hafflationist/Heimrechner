@@ -12,6 +12,7 @@ in {
     german-hyprshot
     wl-clipboard
     tesseract
+    candy-icons
   ];
   wayland.windowManager.hyprland = {
     enable = true;
@@ -19,12 +20,17 @@ in {
       general = {
         gaps_out = "16";
         gaps_in = "16";
-        border_size = 4;
+        border_size = 2;
       };
       decoration = {
         rounding = 32;
+        # border_part_of_window = false;
         shadow = {
-          enabled = false;
+          enabled = true;
+          range = 32;
+          ignore_window = true;
+          color = "0xFF470fff";
+          color_inactive = "0x00A0A0A0";
         };
         blur = {
           size = 16;
@@ -59,7 +65,7 @@ in {
       ];
       bind =
         [
-          "$mod, O, exec, rofi -no-lazy-grab -show combi -modi combi,drun,window -combi-modes \"window,drun\" -theme /etc/nixos/users/mrobohm/programs/rofi/launcher/style -drun-icon-theme \"candy-icons\""
+          "$mod, O, exec, rofi -no-lazy-grab -show combi -modi combi,drun,window -combi-modes \"window,drun\" -theme /etc/nixos/users/mrobohm/programs/rofi/launcher/style -drun-icon-theme \"candy-icons\" -font \"Fira Code 12\""
           # "$mod, V, exec, rofi -modi \"Zwischenablage:greenclip print\" -show \"Zwischenablage\""
           "$mod, V, exec, kitty --class clipse -e clipse"
           "$mod, R, exec, rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}' | wl-copy\""
@@ -99,6 +105,14 @@ in {
       exec-once = [
         "hyprctl setcursor graphite-dark 24"
       ];
+      animations = {
+        animation = [
+          "workspaces, 1, 8, default"
+          "fadeShadow, 1, 20, default"
+          "border, 1, 60, default"
+          "workspaces, 1, 10, default, slidefadevert"
+        ];
+      };
       misc = {
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
@@ -113,7 +127,7 @@ in {
     extraConfig = ''
       general {
         col.inactive_border = rgba(40404000) rgba(40404000)
-        col.active_border = rgba(ffffff80) rgba(ffffff80)
+        col.active_border = rgba(8c69ffff) rgba(ff699bFF)
       }
       monitor = eDP-1, preferred, auto, 1
       monitor = , preferred, auto, 1
