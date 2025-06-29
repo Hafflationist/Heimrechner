@@ -35,7 +35,7 @@ in [
   ./superfile
   ./taffybar
   ./waybar
-  ./weechat
+  # ./weechat
   (xmonadFunc {isMinimal = isMinimal;})
   ./zathura
   ./zsh

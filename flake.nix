@@ -8,12 +8,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    weechat-scripts = {
-      type = "github";
-      owner = "weechat";
-      repo = "scripts";
-      flake = false;
-    };
+    # weechat-scripts = {
+    #   type = "github";
+    #   owner = "weechat";
+    #   repo = "scripts";
+    #   flake = false;
+    # };
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
