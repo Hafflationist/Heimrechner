@@ -61,6 +61,7 @@
     # dotnet-sdk
     cargo
     rustc
+    exercism
 
     # Sonstiges
     tree
