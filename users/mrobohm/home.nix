@@ -45,6 +45,7 @@
     nix-output-monitor
     cowsay
     bat
+    mpv
 
     # Entwicklung
     #unstable.jetbrains.idea-community maven
