@@ -75,6 +75,7 @@
     uhk-agent
     polkit
     keepassxc
+    ausweisapp
   ];
   xdg.mimeApps.enable = true;
   xdg.mimeApps.defaultApplications = {
