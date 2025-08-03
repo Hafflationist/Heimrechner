@@ -802,3 +802,8 @@ def lfcd [arg?] {
     )
     cd $last_dir
 }
+
+def rg [...args] {
+  let cmd = (["rg", "--json", "-C", "2"] ++ $args)
+  ^$cmd | ^delta
+}
