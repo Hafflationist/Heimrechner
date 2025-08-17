@@ -1,6 +1,10 @@
-{ lib, pkgs, inputs, config, ... }:
-
 {
+  lib,
+  pkgs,
+  inputs,
+  config,
+  ...
+}: {
   services.xserver.displayManager.startx.enable = true;
   services.xserver = {
     enable = true;
@@ -14,7 +18,7 @@
     pkgs.gnomeExtensions.blur-my-shell
     pkgs.gnomeExtensions.tiling-shell
   ];
-  environment.gnome.excludePackages = (with pkgs; [
+  environment.gnome.excludePackages = with pkgs; [
     atomix # puzzle game
     cheese # webcam tool
     epiphany # web browser
@@ -30,7 +34,7 @@
     iagno # go game
     tali # poker game
     totem # video player
-  ]);
+  ];
   programs.hyprland.enable = true;
   programs.hyprland.xwayland.enable = true;
   programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
