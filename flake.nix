@@ -31,6 +31,7 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
   outputs = {
@@ -59,6 +60,7 @@
         home-manager.users.mrobohm = homeConfig {isMinimal = isMinimal;};
       }
       inputs.stylix.nixosModules.stylix
+      inputs.chaotic.nixosModules.default
     ];
   in {
     # Falls mal eine Home-Output generiert werden soll: https://www.reddit.com/r/NixOS/comments/1c6m5j4/how_to_use_both_stable_and_unstable_nixpkgs_in_a/

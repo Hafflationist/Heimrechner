@@ -32,6 +32,7 @@
       themePackages = [pkgs.nixos-bgrt-plymouth];
       theme = "bgrt";
     };
+    kernelPackages = pkgs.linuxPackages_cachyos;
     kernelParams = [
       "quiet"
       "splash"
