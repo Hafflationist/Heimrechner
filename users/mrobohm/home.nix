@@ -51,7 +51,6 @@
     #unstable.jetbrains.idea-community maven
     jetbrains.idea-community
     maven
-    gcc12
     cabal-install
     stack
     haskell-language-server
