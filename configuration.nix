@@ -158,7 +158,7 @@
     };
   };
 
-  virtualisation.virtualbox.host.enable = true;
+  # virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = ["virtualbox"];
 
   # Some programs need SUID wrappers, can be configured further or are
