@@ -1,5 +1,4 @@
-{ isMinimal }:
-{
+{isMinimal}: {
   xsession = {
     enable = true;
     windowManager.xmonad = {
@@ -10,7 +9,10 @@
         hp.monad-logger
         hp.taffybar
       ];
-      config = if isMinimal then ./configMinimal.hs else ./config.hs;
+      config =
+        if isMinimal
+        then ./configMinimal.hs
+        else ./config.hs;
     };
   };
 }

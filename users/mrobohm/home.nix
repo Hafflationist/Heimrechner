@@ -12,7 +12,7 @@
     brave
 
     # Normalfag-Programme
-    tdesktop
+    telegram-desktop
     steam
     thunderbird
     heroic
@@ -25,7 +25,7 @@
     # Desktopumgebung
     masterpdfeditor
     killall
-    bitwarden
+    bitwarden-desktop
     feh
     viu
     # flameshot

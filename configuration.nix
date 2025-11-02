@@ -138,7 +138,7 @@
     wget
     killall
     feh
-    gitAndTools.gitFull
+    gitFull
     #plymouth
     nixos-bgrt-plymouth
     samba

@@ -1,24 +1,25 @@
-{ pkgs, config, ... }:
-
 {
+  pkgs,
+  config,
+  ...
+}: {
   xdg.configFile."lf/icons".source = ./icons;
 
   programs.lf = {
     enable = true;
     commands = {
-      dragon-out = ''%${pkgs.xdragon}/bin/xdragon -a -x "$fx"'';
+      dragon-out = ''%${pkgs.dragon-drop}/bin/dragon-drop -a -x "$fx"'';
       editor-open = ''$$EDITOR $f'';
       mkdir = ''
-      ''${{
-        printf "Directory Name: "
-        read DIR
-        mkdir $DIR
-      }}
+        ''${{
+          printf "Directory Name: "
+          read DIR
+          mkdir $DIR
+        }}
       '';
     };
 
     keybindings = {
-
       "\\\"" = "";
       o = "";
       c = "mkdir";
@@ -26,9 +27,9 @@
       "`" = "mark-load";
       "\\'" = "mark-load";
       "<enter>" = "open";
-      
+
       do = "dragon-out";
-      
+
       "g~" = "cd";
       gh = "cd";
       "g/" = "/";
@@ -45,16 +46,14 @@
       ignorecase = true;
     };
 
-    extraConfig = 
-    let 
-      previewer = 
-        pkgs.writeShellScriptBin "pv.sh" ''
+    extraConfig = let
+      previewer = pkgs.writeShellScriptBin "pv.sh" ''
         file=$1
         w=$2
         h=$3
         x=$4
         y=$5
-        
+
         if [[ "$( ${pkgs.file}/bin/file -Lb --mime-type "$file")" =~ ^image ]]; then
             ${pkgs.kitty}/bin/kitty +kitten icat --silent --stdin no --transfer-mode file --place "''${w}x''${h}@''${x}x''${y}" "$file" < /dev/null > /dev/tty
             exit 1
@@ -63,19 +62,18 @@
         filename=$(basename $(echo "$file" | tr ' ' '_'))
         if [[ "$( ${pkgs.file}/bin/file -Lb --mime-type "$file")" =~ ^application/pdf ]]; then
             if [[ ! -f "/tmp/$filename.png" ]]; then
-                ${pkgs.poppler_utils}/bin/pdftoppm -f 1 -l 1 "$file" >> "/tmp/$filename.png"
+                ${pkgs.poppler-utils}/bin/pdftoppm -f 1 -l 1 "$file" >> "/tmp/$filename.png"
             fi
             ${pkgs.kitty}/bin/kitty +kitten icat --silent --stdin no --transfer-mode file --place "''${w}x''${h}@''${x}x''${y}" "/tmp/$filename.png" < /dev/null > /dev/tty
           exit 1
         fi
-        
+
         ${pkgs.pistol}/bin/pistol "$file"
       '';
       cleaner = pkgs.writeShellScriptBin "clean.sh" ''
         ${pkgs.kitty}/bin/kitty +kitten icat --clear --stdin no --silent --transfer-mode file < /dev/null > /dev/tty
       '';
-    in
-    ''
+    in ''
       set cleaner ${cleaner}/bin/clean.sh
       set previewer ${previewer}/bin/pv.sh
     '';
