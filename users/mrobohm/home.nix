@@ -33,6 +33,7 @@
     tesseract # benötigt für ocr
     betterlockscreen
     deadbeef
+    wiremix
 
     # Grafikprogramme
     inkscape
