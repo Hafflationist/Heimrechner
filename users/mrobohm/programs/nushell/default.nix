@@ -1,13 +1,15 @@
-{ pkgs, lib, ... }:
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   programs = {
     nushell = {
       enable = true;
       configFile.source = ./config.nu;
       envFile.source = ./env.nu;
       extraConfig = ''
-       '';
+      '';
       shellAliases = {
         rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#heimrechner";
         r = "sudo nixos-rebuild switch --flake /etc/nixos#heimrechner";
@@ -20,9 +22,10 @@
         herunter = "shutdown now";
         neustart = "reboot";
         gs = "git status";
+        gaa = "git add .";
         gd = "git diff";
       };
-    };  
+    };
     carapace.enable = true;
     carapace.enableNushellIntegration = true;
 
