@@ -3,7 +3,12 @@
   pkgs-stable,
   inputs,
   ...
-}: {
+}: let
+  # Lade die Funktionen, die die Modullisten zurückgeben
+  programsModules = import ./programs;
+  servicesModules = import ./services;
+  miscModules = import ./misc;
+in {
   home.username = "mrobohm";
   #home.homeDirectory = /home/mrobohm;
   home.stateVersion = "22.11";
@@ -102,10 +107,11 @@
     enable = true;
   };
   imports =
-    [./stylix]
-    ++ builtins.concatLists (builtins.map (modules: modules {isMinimal = isMinimal;}) (builtins.map import [
-      ./programs
-      ./services
-      ./misc
-    ]));
+    [
+      ./stylix
+    ]
+    # Führe die Listen von Modulen zusammen, die von den Funktionen zurückgegeben werden
+    ++ (programsModules {isMinimal = isMinimal;})
+    ++ (servicesModules {isMinimal = isMinimal;})
+    ++ (miscModules {isMinimal = isMinimal;});
 }
