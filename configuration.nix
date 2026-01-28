@@ -143,7 +143,12 @@
     nixos-bgrt-plymouth
     samba
     cifs-utils # notwendig für Fritz!NAS
+    libimobiledevice
+    ifuse
+    usbmuxd
   ];
+
+  services.usbmuxd.enable = true;
 
   virtualisation.containers.enable = true;
   virtualisation = {
