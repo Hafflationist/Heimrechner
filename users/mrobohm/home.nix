@@ -72,6 +72,7 @@ in {
     # Sonstiges
     tree
     element-desktop
+    digikam
     # _2048-in-terminal
     ripgrep # genutzt von Neovim-Telescope
     # openttd
