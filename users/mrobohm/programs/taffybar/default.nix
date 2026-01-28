@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   custom-panel-launch = pkgs.writeScriptBin "custom-panel-launch" ''
     #!/${pkgs.stdenv.shell}
     killall custom-taffybar
@@ -7,13 +6,12 @@ let
     while true; do custom-taffybar; done
   '';
   custom-taffybar =
-    (import ./customTaffybar/default.nix) { inherit pkgs; };
-in
-{
+    (import ./customTaffybar/default.nix) {inherit pkgs;};
+in {
   home.packages = with pkgs; [
-    custom-panel-launch
-    custom-taffybar
-    haskellPackages.status-notifier-item
+    # custom-panel-launch
+    # custom-taffybar
+    # haskellPackages.status-notifier-item
   ];
 
   home.file.".config/taffybar/taffybar.css".source = ./taffybar.css;

@@ -37,24 +37,24 @@ in {
           passes = 3;
         };
       };
-      windowrulev2 = [
-        "float, class:(Rofi)"
-        "stayfocused, class:(Rofi)"
-        "bordersize 0, class:(Rofi)"
-        "dimaround 1, class:(Rofi)"
-        "float, class:(clipse)"
-        "size <50% <50%, class:(clipse)"
-        "stayfocused, class:(clipse)"
-        "bordersize 0, class:(clipse)"
-        "dimaround 1, class:(clipse)"
+      windowrule = [
+        "float on,match:class Rofi"
+        "stay_focused on,match:class Rofi"
+        "border_size 0,match:class Rofi"
+        "dim_around 1,match:class Rofi"
+        "float on,match:class clipse"
+        "size <50% <50%,match:class clipse"
+        "stay_focused on,match:class clipse"
+        "border_size 0,match:class clipse"
+        "dim_around 1,match:class clipse"
       ];
       layerrule = [
-        "blur,waybar"
-        "blur,swaync-control-center"
-        "blur,swaync-notification-window"
-        "ignorezero,swaync-notification-window"
-        "ignorealpha 0.09,swaync-notification-window"
-        "ignorezero,waybar"
+        "blur on,match:namespace waybar"
+        "blur on,match:namespace swaync-control-center"
+        "blur on,match:namespace swaync-notification-window"
+        # "ignore_alpha 0.0,match:namespace swaync-notification-window"
+        "ignore_alpha 0.09,match:namespace swaync-notification-window"
+        "ignore_alpha 0.0,match:namespace waybar"
       ];
       "$mod" = "SUPER";
       input = {
@@ -103,6 +103,7 @@ in {
         );
       exec = ["waybar"];
       exec-once = [
+        "hyprpaper"
         "hyprctl setcursor graphite-dark 24"
       ];
       animations = {
@@ -116,12 +117,7 @@ in {
       misc = {
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
-        disable_hyprland_qtutils_check = true;
-      };
-      plugins = {
-        hyprtrails = {
-          color = "#80c50ed2";
-        };
+        # disable_hyprland_qtutils_check = true;
       };
     };
     extraConfig = ''

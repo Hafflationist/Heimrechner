@@ -37,7 +37,7 @@ in {
     # xsel # benötigt für ocr
     tesseract # benötigt für ocr
     betterlockscreen
-    deadbeef
+    pkgs-stable.deadbeef
     wiremix
 
     # Grafikprogramme
@@ -55,7 +55,7 @@ in {
 
     # Entwicklung
     #unstable.jetbrains.idea-community maven
-    jetbrains.idea-community
+    # jetbrains.idea-community
     maven
     cabal-install
     stack
