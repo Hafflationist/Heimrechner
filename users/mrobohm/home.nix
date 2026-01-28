@@ -82,6 +82,7 @@ in {
     polkit
     keepassxc
     ausweisapp
+    gemini-cli
   ];
   xdg.mimeApps.enable = true;
   xdg.mimeApps.defaultApplications = {
