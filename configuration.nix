@@ -118,8 +118,8 @@
     extraGroups = ["networkmanager" "wheel" "virtualbox"];
     packages = with pkgs; [
       firefox
-      inputs.neovim-flocke.packages.${pkgs.system}.neovim
-      inputs.zen-browser.packages."${system}".default
+      inputs.neovim-flocke.packages.${pkgs.stdenv.hostPlatform.system}.neovim
+      inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
       #  home-manager
       #  thunderbird
     ];

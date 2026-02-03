@@ -3,7 +3,7 @@
   ];
   programs.waybar = {
     enable = true;
-    # package = inputs.hyprland.packages.${pkgs.system}.waybar-hyprland;
+    # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.waybar-hyprland;
     package = pkgs.waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
     });
