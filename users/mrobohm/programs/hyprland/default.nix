@@ -38,18 +38,18 @@ in {
         };
       };
       windowrule = [
-        "float on,match:class Rofi"
-        "stay_focused on,match:class Rofi"
-        "border_size 0,match:class Rofi"
-        "dim_around 1,match:class Rofi"
         "float on,match:class clipse"
-        "size <50% <50%,match:class clipse"
+        "size (monitor_w*0.25) (monitor_h*0.6),match:class clipse"
         "stay_focused on,match:class clipse"
+        "no_shadow on,match:class clipse"
         "border_size 0,match:class clipse"
         "dim_around 1,match:class clipse"
       ];
       layerrule = [
         "blur on,match:namespace waybar"
+        "blur on,match:namespace rofi"
+        "dim_around 1,match:namespace rofi"
+        "ignore_alpha 0.0,match:namespace rofi"
         "blur on,match:namespace swaync-control-center"
         "blur on,match:namespace swaync-notification-window"
         # "ignore_alpha 0.0,match:namespace swaync-notification-window"

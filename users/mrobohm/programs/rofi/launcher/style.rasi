@@ -1,33 +1,33 @@
 configuration {
-    lines:						10;
-    columns:						1;
-    font: 						"Cascadia Code 10";
-    bw: 						0;
-    location: 						0;
-    padding: 						0;
-    fixed-num-lines: 				        true;
-    show-icons: 					true;
-    icon-theme:						"candy-icons";
-    sidebar-mode: 					true;
-    separator-style: 					"none";
-    hide-scrollbar: 					true;
-    fullscreen: 					false;
-    fake-transparency: 					false;
-    scroll-method: 					0;
-    window-format: 					"[{w}] ··· {c} ···   {t}";
-    click-to-exit: 					true;
-    show-match: 					false;
-    combi-hide-mode-prefix: 				false;
-    display-window: 					" ";
-    display-windowcd: 					" ";
-    display-run: 					" ";
-    display-ssh: 					" ";
-    display-drun: 					" ";
-    display-combi: 					" ";
+    lines:                  10;
+    columns:                1;
+    font:                   "Cascadia Code 10";
+    bw:                     0;
+    location:               0;
+    padding:                0;
+    fixed-num-lines:        true;
+    show-icons:             true;
+    icon-theme:             "candy-icons";
+    sidebar-mode:           true;
+    separator-style:        "none";
+    hide-scrollbar:         true;
+    fullscreen:             false;
+    fake-transparency:      false;
+    scroll-method:          0;
+    window-format:          "[{w}] ··· {c} ···   {t}";
+    click-to-exit:          true;
+    show-match:             false;
+    combi-hide-mode-prefix: false;
+    display-window:         " ";
+    display-windowcd:       " ";
+    display-run:            " ";
+    display-ssh:            " ";
+    display-drun:           " ";
+    display-combi:          " ";
 }
 
 * {
-    al:      #00000000;
+    al:      #01010101;
     bg:      #01010140;
     se:      #ffd5cdff;
     fg:      #eeeeeeff;
@@ -40,114 +40,114 @@ configuration {
     cyan:    #4DD0E1ff;
     select:  #ffffff40;
     cmd:     #88888840;
-    background-color:             	@al;
-    border-radius: 					12px;
+    background-color: @al;
+    border-radius:    12px;
 }
 window {
-    border: 						0px;
-    border-color: 					@ac;
-    border-radius: 					12px;
-    width:						25%;
+    border:        0px;
+    border-color:  @ac;
+    border-radius: 32px;
+    width:         25%;
 }
 
 prompt {
-    spacing: 						8;
-    margin:						2px;
-    border: 						0px;
-    text-color: 					@fg;
-    background-color:					@al;
+    spacing:          8;
+    margin:           2px;
+    border:           0px;
+    text-color:       @fg;
+    background-color: @al;
 }
 
 textbox-prompt-colon {
-    expand: 						false;
-    str: 						" ";
-    text-color: 					inherit;
-    background-color:					@al;
+    expand:           false;
+    str:              " ";
+    text-color:       inherit;
+    background-color: @al;
 }
 
 entry {
-    spacing:    					0;
-    text-color: 					@fg;
+    spacing:         0;
+    text-color:      @fg;
 }
 
 case-indicator {
-    spacing:    					0;
-    text-color: 					@fg;
-    background-color:					@al;
+    spacing:          0;
+    text-color:       @fg;
+    background-color: @al;
 }
 
 inputbar {
-    spacing:    					0px;
-    text-color: 					@fg;
-    padding:    					12px;
-    background-color:             			@bg;
-    border-radius: 					12px;
-    children: 						[ prompt,textbox-prompt-colon,entry,case-indicator ];
+    spacing:          0px;
+    text-color:       @fg;
+    padding:          12px;
+    background-color: @bg;
+    border-radius:    12px;
+    children:         [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
 
 mainbox {
-    border: 						0px;
-    border-color: 					@ac;
-    border-radius: 					12px;
-    padding: 						32px;
+    border:        0px;
+    border-color:  @ac;
+    border-radius: 12px;
+    padding:       32px;
 }
 
 listview {
-    fixed-height: 					0;
-    border: 						0px;
-    border-color: 					@ac;
-    border-radius: 					12px;
-    spacing: 						4px;
-    scrollbar: 						false;
-    padding: 						5px 5px 5px 5px;
+    fixed-height:  0;
+    border:        0px;
+    border-color:  @ac;
+    border-radius: 12px;
+    spacing:       4px;
+    scrollbar:     false;
+    padding:       5px 5px 5px 5px;
 }
 
 element {
-    border: 						0px;
-    border-radius: 					8px;
-    padding: 						4px;
+    border:        0px;
+    border-radius: 8px;
+    padding:       4px;
 }
 element-text, element-icon {
     background-color: @al;
     text-color:       inherit;
-    padding: 						4px;
+    padding:          4px;
 }
 
 element normal.normal {
-    background-color: 				@al;
-    text-color:       				@fg;
+    background-color:     @al;
+    text-color:           @fg;
 }
 element normal.urgent {
-    background-color: 				@al;
-    text-color:       				@red;
+    background-color:     @al;
+    text-color:           @red;
 }
 element normal.active {
-    background-color: 				@green;
-    text-color:       				@bg;
+    background-color:     @green;
+    text-color:           @bg;
 }
 element selected.normal {
-    background-color: 				@select;
-    text-color:       				@fg;
+    background-color:     @select;
+    text-color:           @fg;
 }
 element selected.urgent {
-    background-color: 				@select;
-    text-color:       				@red;
+    background-color:     @select;
+    text-color:           @red;
 }
 element selected.active {
-    background-color: 				@select;
-    text-color:       				@fg;
+    background-color:     @select;
+    text-color:           @fg;
 }
 element alternate.normal {
-    background-color: 				@al;
-    text-color:       				@fg;
+    background-color:     @al;
+    text-color:           @fg;
 }
 element alternate.urgent {
-    background-color: 				@al;
-    text-color:       				@fg;
+    background-color:     @al;
+    text-color:           @fg;
 }
 element alternate.active {
-    background-color: 				@bg;
-    text-color:       				@fg;
+    background-color:     @bg;
+    text-color:           @fg;
 }
 
 element-text, element-icon {
@@ -156,43 +156,43 @@ element-text, element-icon {
 }
 
 sidebar {
-    border:       					0px;
-    border-color: 					@ac;
-    border-radius: 					0px;
+    border:            0px;
+    border-color:      @ac;
+    border-radius:      0px;
 }
 
 button {
-    background-color:             			@cmd;
-    margin: 						5px;
-    padding: 						5px;
-    text-color: 					@fg;
-    border: 						0px;
-    border-radius: 					12px;
-    border-color: 					@fg;
+    background-color:                @cmd;
+    margin:       5px;
+    padding:       5px;
+    text-color:      @fg;
+    border:       0px;
+    border-radius:      12px;
+    border-color:      @fg;
 }
 
 button selected {
-    background-color:             			@select;
-    text-color: 					@fg;
-    border: 						0px;
-    border-radius: 					12px;
-    border-color: 					@fg;
+    background-color:                @select;
+    text-color:      @fg;
+    border:       0px;
+    border-radius:      12px;
+    border-color:      @fg;
 }
 
 scrollbar {
-    width:        					4px;
-    border:       					0px;
-    handle-color: 					@fg;
-    handle-width: 					8px;
-    padding:      					0;
+    width:             4px;
+    border:            0px;
+    handle-color:      @fg;
+    handle-width:      8px;
+    padding:           0;
 }
 
 message {
-    border: 						0px;
-    border-color: 					@ac;
-    padding: 						1px;
+    border:       0px;
+    border-color:      @ac;
+    padding:       1px;
 }
 
 textbox {
-    text-color: 					@fg;
+    text-color:      @fg;
 }

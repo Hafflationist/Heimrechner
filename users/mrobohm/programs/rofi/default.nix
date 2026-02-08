@@ -9,7 +9,7 @@
   ];
   programs.rofi = {
     enable = true;
-    package = pkgs-stable.rofi;
+    package = pkgs.rofi;
     terminal = "${pkgs.kitty}/bin/kitty";
     theme = ./launcher/style.rasi;
     plugins = [pkgs.rofi-calc];
