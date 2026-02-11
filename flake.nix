@@ -56,7 +56,7 @@
           };
         };
         home-manager.useGlobalPkgs = true;
-        home-manager.backupFileExtension = "backup7";
+        home-manager.backupFileExtension = "backupf";
         home-manager.users.mrobohm = homeConfig {isMinimal = isMinimal;};
       }
       inputs.stylix.nixosModules.stylix
@@ -78,6 +78,21 @@
           inherit inputs;
         };
         modules = standardModules true;
+      };
+    };
+    homeManagerConfigurations = {
+      mrobohm = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = {
+          inherit inputs;
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+        modules = [
+          (homeConfig {isMinimal = false;})
+        ];
       };
     };
   };
